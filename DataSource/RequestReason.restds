@@ -1,0 +1,313 @@
+{
+  "name": "RequestReason",
+  "connectionId": "766d3c90-bc8a-4b27-a42c-6cc31e9514b8",
+  "connectionName": {
+    "tr-TR": "DeployAgent"
+  },
+  "connectionType": 5,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "bodyContent": "{\"loadOptions\":{\"filters\":[{\"Operator\":1,\"Filters\":[{\"Column\":\"REQUESTTYPEID\",\"Not\":false,\"Type\":1,\"Value\":\"@requestTypeId\",\"ItemType\":4}]}],\"sorts\":[]}}",
+    "contentType": 3,
+    "endpoint": "/apps/ITRM/latest/api/DataSource/RequestReasons_DataSource",
+    "requestType": 1,
+    "selectedPath": "result.result",
+    "parameters": [
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "requestTypeId",
+        "value": "196850",
+        "valueType": 1,
+        "type": 3
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Authorization",
+        "value": "%User.Token%",
+        "valueType": 1,
+        "type": 1
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Bimser-Encrypted-Data",
+        "value": "%User.EncryptedData%",
+        "valueType": 1,
+        "type": 1
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Bimser-Language",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "type": 1
+      }
+    ]
+  },
+  "structure": {
+    "metaData": [
+      {
+        "childs": [
+          {
+            "childs": [
+              {
+                "childs": [
+                  {
+                    "childs": [],
+                    "displayName": "returnType",
+                    "name": "returnType",
+                    "valueType": 3
+                  },
+                  {
+                    "childs": [
+                      {
+                        "childs": [],
+                        "displayName": "name",
+                        "name": "name",
+                        "valueType": 1
+                      },
+                      {
+                        "childs": [],
+                        "displayName": "caption",
+                        "name": "caption",
+                        "valueType": 1
+                      },
+                      {
+                        "childs": [],
+                        "displayName": "type",
+                        "name": "type",
+                        "valueType": 3
+                      }
+                    ],
+                    "displayName": "columns",
+                    "name": "columns",
+                    "valueType": 10
+                  }
+                ],
+                "displayName": "structure",
+                "name": "structure",
+                "valueType": 9
+              },
+              {
+                "childs": [],
+                "displayName": "size",
+                "name": "size",
+                "valueType": 5
+              },
+              {
+                "childs": [],
+                "displayName": "count",
+                "name": "count",
+                "valueType": 3
+              },
+              {
+                "childs": [],
+                "displayName": "isFromCache",
+                "name": "isFromCache",
+                "valueType": 2
+              },
+              {
+                "childs": [],
+                "displayName": "cachingDate",
+                "name": "cachingDate",
+                "valueType": 5
+              },
+              {
+                "childs": [],
+                "displayName": "isEndOfSource",
+                "name": "isEndOfSource",
+                "valueType": 2
+              },
+              {
+                "childs": [
+                  {
+                    "childs": [
+                      {
+                        "childs": [],
+                        "displayName": "selectors",
+                        "name": "selectors",
+                        "valueType": 5
+                      },
+                      {
+                        "childs": [],
+                        "displayName": "distinct",
+                        "name": "distinct",
+                        "valueType": 2
+                      },
+                      {
+                        "childs": [
+                          {
+                            "childs": [
+                              {
+                                "childs": [],
+                                "displayName": "column",
+                                "name": "column",
+                                "valueType": 1
+                              },
+                              {
+                                "childs": [],
+                                "displayName": "not",
+                                "name": "not",
+                                "valueType": 2
+                              },
+                              {
+                                "childs": [],
+                                "displayName": "type",
+                                "name": "type",
+                                "valueType": 3
+                              },
+                              {
+                                "childs": [],
+                                "displayName": "value",
+                                "name": "value",
+                                "valueType": 3
+                              },
+                              {
+                                "childs": [],
+                                "displayName": "itemType",
+                                "name": "itemType",
+                                "valueType": 3
+                              }
+                            ],
+                            "displayName": "filters",
+                            "name": "filters",
+                            "valueType": 10
+                          },
+                          {
+                            "childs": [],
+                            "displayName": "operator",
+                            "name": "operator",
+                            "valueType": 3
+                          }
+                        ],
+                        "displayName": "filters",
+                        "name": "filters",
+                        "valueType": 10
+                      },
+                      {
+                        "childs": [],
+                        "displayName": "sorts",
+                        "name": "sorts",
+                        "valueType": 10
+                      },
+                      {
+                        "childs": [
+                          {
+                            "childs": [],
+                            "displayName": "skip",
+                            "name": "skip",
+                            "valueType": 3
+                          },
+                          {
+                            "childs": [],
+                            "displayName": "take",
+                            "name": "take",
+                            "valueType": 3
+                          }
+                        ],
+                        "displayName": "pagination",
+                        "name": "pagination",
+                        "valueType": 9
+                      }
+                    ],
+                    "displayName": "loadOptions",
+                    "name": "loadOptions",
+                    "valueType": 9
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "Culture",
+                    "name": "Culture",
+                    "valueType": 1
+                  }
+                ],
+                "displayName": "parameters",
+                "name": "parameters",
+                "valueType": 9
+              },
+              {
+                "childs": [],
+                "displayName": "success",
+                "name": "success",
+                "valueType": 2
+              },
+              {
+                "childs": [],
+                "displayName": "message",
+                "name": "message",
+                "valueType": 1
+              },
+              {
+                "childs": [],
+                "displayName": "internalMessage",
+                "name": "internalMessage",
+                "valueType": 1
+              },
+              {
+                "childs": [
+                  {
+                    "childs": [],
+                    "displayName": "DOCUMENTID",
+                    "name": "DOCUMENTID",
+                    "valueType": 3
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "REQUESTREASON",
+                    "name": "REQUESTREASON",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "DESCRIPTION",
+                    "name": "DESCRIPTION",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "REQUESTTYPE",
+                    "name": "REQUESTTYPE",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "REQUESTTYPEID",
+                    "name": "REQUESTTYPEID",
+                    "valueType": 3
+                  }
+                ],
+                "displayName": "result",
+                "name": "result",
+                "valueType": 10
+              }
+            ],
+            "displayName": "result",
+            "name": "result",
+            "valueType": 9
+          },
+          {
+            "childs": [],
+            "displayName": "success",
+            "name": "success",
+            "valueType": 2
+          }
+        ],
+        "displayName": "",
+        "name": "",
+        "valueType": 9
+      }
+    ]
+  }
+}

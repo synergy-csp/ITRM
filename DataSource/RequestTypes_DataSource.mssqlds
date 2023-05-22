@@ -1,0 +1,35 @@
+{
+  "name": "RequestTypes_DataSource",
+  "connectionId": "3ee648e2-6d8b-49ad-babf-a6d85f12bb92",
+  "connectionName": {
+    "tr-TR": "SystemDefultConnection"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT DOCUMENTID,\nCOALESCE(NULLIF(E_ITRM_RequestTypeEditML_SystemCulture.REQUESTTYPE, ''), NULLIF(E_ITRM_RequestTypeEditML_UserCulture.REQUESTTYPE, ''), NULLIF(E_ITRM_RequestTypeEditML_defaultCulture.REQUESTTYPE, '')) AS REQUESTTYPE,\nCOALESCE(NULLIF(E_ITRM_RequestTypeEditML_SystemCulture.DESCRIPTION, ''), NULLIF(E_ITRM_RequestTypeEditML_UserCulture.DESCRIPTION, ''), NULLIF(E_ITRM_RequestTypeEditML_defaultCulture.DESCRIPTION, '')) AS DESCRIPTION\n FROM E_ITRM_RequestTypeEdit\n\nOUTER APPLY (SELECT REQUESTTYPE,DESCRIPTION FROM E_ITRM_RequestTypeEditML WHERE E_ITRM_RequestTypeEdit.ID = E_ITRM_RequestTypeEditML.PARENTID AND E_ITRM_RequestTypeEditML.CULTURE = 'system') E_ITRM_RequestTypeEditML_SystemCulture \nOUTER APPLY (SELECT REQUESTTYPE,DESCRIPTION FROM E_ITRM_RequestTypeEditML WHERE E_ITRM_RequestTypeEdit.ID = E_ITRM_RequestTypeEditML.PARENTID AND E_ITRM_RequestTypeEditML.CULTURE = {{Culture}}) E_ITRM_RequestTypeEditML_UserCulture\nOUTER APPLY (SELECT REQUESTTYPE,DESCRIPTION FROM E_ITRM_RequestTypeEditML WHERE E_ITRM_RequestTypeEdit.ID = E_ITRM_RequestTypeEditML.PARENTID AND E_ITRM_RequestTypeEditML.CULTURE = (SELECT TOP 1 CULTURE from LANGUAGES WHERE ISDEFAULT = 1)) E_ITRM_RequestTypeEditML_defaultCulture\n\nWHERE\nE_ITRM_RequestTypeEdit.DELETEDAT IS NULL\nORDER BY DOCUMENTID DESC\n",
+    "parameters": [
+      {
+        "caption": "Culture",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Culture",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "length": 10,
+        "subType": null
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [],
+    "returnType": null
+  }
+}

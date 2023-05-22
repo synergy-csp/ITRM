@@ -1,0 +1,887 @@
+{
+  "data": {
+    "Priorities": {
+      "properties": {
+        "clientEvents": [
+          {
+            "name": "OnMessageReceived",
+            "methodName": "Priorities_OnMessageReceived"
+          }
+        ],
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Öncelikler",
+            "en-US": "Priorities"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "toolbarButtons": [
+          {
+            "key": "toolbarSaveButton",
+            "name": "Kaydet",
+            "icon": "save",
+            "enabled": true,
+            "caption": {
+              "tr-TR": "Kaydet",
+              "en-US": "Save"
+            }
+          }
+        ],
+        "name": "Priorities",
+        "ddl": {
+          "name": "Priorities",
+          "prefix": "ITRM"
+        },
+        "text": {
+          "tr-TR": "Priorities",
+          "en-US": "Priorities"
+        },
+        "commitId": 5,
+        "controlType": "Form",
+        "controlId": "9c6f14a6-ac63-44f7-aee7-88aaf91c23a0"
+      },
+      "id": "Priorities",
+      "type": "Form"
+    },
+    "Priorities_Grid": {
+      "properties": {
+        "clientEvents": [
+          {
+            "name": "OnActionButtonClick",
+            "methodName": "Priorities_Grid_OnActionButtonClick"
+          }
+        ],
+        "dataSource": {
+          "name": "Priorities_DataSource",
+          "runAtServer": false,
+          "parameters": [],
+          "fileId": "<DataSource-Priorities_DataSource>",
+          "connectionType": 1
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Priorities_Grid",
+            "en-US": "Priorities_Grid",
+            "ru-RU": "Priorities_Grid"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "exportToExcel": true,
+        "filtering": {
+          "enabled": true,
+          "showOperationChooser": true,
+          "headerFilterEnabled": true
+        },
+        "name": "Priorities_Grid",
+        "hoverStateEnabled": true,
+        "ddl": {
+          "name": "Priorities_Grid"
+        },
+        "toolbarActionButtons": [
+          {
+            "name": "New",
+            "text": {
+              "tr-TR": "Yeni"
+            },
+            "title": {
+              "tr-TR": "Yeni"
+            },
+            "icon": "add",
+            "typeName": "CreateFormArgs",
+            "args": {
+              "typeName": "CreateFormArgs",
+              "formName": "PriorityEdit",
+              "projectName": "ITRM",
+              "size": 1,
+              "showOn": "drawer",
+              "closeCurrentPanel": false,
+              "parameters": [],
+              "view": "default"
+            },
+            "extendedArgs": {
+              "id": "4f99acfa-87d7-030f-3d62-8fea6027d9b5"
+            },
+            "visible": true,
+            "key": "0"
+          }
+        ],
+        "commitId": 12,
+        "controlType": "DataGrid",
+        "controlId": "4a04fae5-d4cb-48e9-a8a9-1516ce02b830",
+        "searching": {
+          "enabled": true
+        },
+        "columns": [
+          {
+            "name": "View",
+            "caption": {
+              "tr-TR": "Görüntüle",
+              "en-US": "View",
+              "ru-RU": "View"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "controlId": "View",
+              "name": "View",
+              "ddl": {
+                "name": "View"
+              }
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "View_action_button",
+              "text": {
+                "tr-TR": "View",
+                "en-US": "View",
+                "ru-RU": "View"
+              },
+              "title": {
+                "tr-TR": "View",
+                "en-US": "View",
+                "ru-RU": "View"
+              },
+              "icon": "search",
+              "typeName": "OpenFormArgs",
+              "args": {
+                "typeName": "OpenFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "drawer",
+                "closeCurrentPanel": false,
+                "parameters": [],
+                "documentId": "[DOCUMENTID]",
+                "editable": false
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "none",
+              "columnName": "View",
+              "size": 0,
+              "nullable": true
+            },
+            "formatType": {
+              "type": "actionButton",
+              "format": ""
+            },
+            "editType": "actionButton",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "isGeneratedColumn": true,
+            "key": "0"
+          },
+          {
+            "name": "Delete",
+            "caption": {
+              "tr-TR": "Sil"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "controlId": "NewColumn2",
+              "name": "NewColumn2",
+              "ddl": {
+                "name": "NewColumn2"
+              }
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "Delete",
+              "text": {
+                "tr-TR": "Sil"
+              },
+              "title": {
+                "tr-TR": "Sil"
+              },
+              "icon": "delete",
+              "typeName": "ExecuteCustomActionArgs",
+              "args": {
+                "typeName": "ExecuteCustomActionArgs"
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "none",
+              "columnName": "NewColumn2"
+            },
+            "formatType": {
+              "format": "",
+              "type": "actionButton"
+            },
+            "editType": "actionButton",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "key": "5"
+          },
+          {
+            "name": "Edit",
+            "caption": {
+              "tr-TR": "Düzenle"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": true,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "controlId": "NewColumn1",
+              "name": "NewColumn1",
+              "ddl": {
+                "name": "NewColumn1"
+              }
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "Edit",
+              "text": {
+                "tr-TR": "Düzenle"
+              },
+              "title": {
+                "tr-TR": "Düzenle"
+              },
+              "icon": "edit",
+              "typeName": "OpenFormArgs",
+              "args": {
+                "typeName": "OpenFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "drawer",
+                "closeCurrentPanel": false,
+                "parameters": [],
+                "documentId": "[DOCUMENTID]",
+                "isSaveAsForm": false,
+                "view": "default",
+                "editable": true
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "none",
+              "columnName": "NewColumn1"
+            },
+            "formatType": {
+              "format": "",
+              "type": "actionButton"
+            },
+            "editType": "actionButton",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "key": "1"
+          },
+          {
+            "name": "DOCUMENTID",
+            "caption": {
+              "tr-TR": "DOCUMENTID",
+              "en-US": "DOCUMENTID",
+              "ru-RU": "DOCUMENTID"
+            },
+            "width": 100,
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": false,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": false,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "DOCUMENTID",
+              "controlId": "DOCUMENTID",
+              "controlType": "NumberBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120,
+                  "height": 34
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": true,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "DOCUMENTID",
+                "allowNull": true,
+                "type": "Decimal"
+              },
+              "text": "",
+              "step": 1,
+              "precision": 0,
+              "useThousandSeparator": false,
+              "sizeType": "middle"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": true,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "decimal",
+              "columnName": "DOCUMENTID",
+              "size": 0,
+              "nullable": true
+            },
+            "formatType": {
+              "type": "label",
+              "format": ""
+            },
+            "editType": "numberBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "isGeneratedColumn": true,
+            "key": "2"
+          },
+          {
+            "name": "PRIORITY",
+            "caption": {
+              "tr-TR": "Öncelik",
+              "en-US": "PRIORITY",
+              "ru-RU": "PRIORITY"
+            },
+            "width": "40%",
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": false,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "PRIORITY",
+              "controlId": "PRIORITY",
+              "controlType": "TextBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120,
+                  "height": 34
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": false,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "PRIORITY",
+                "allowNull": true,
+                "size": 500,
+                "type": "String"
+              },
+              "text": "",
+              "maxLength": 500,
+              "enableMultiLanguageText": false,
+              "multiLanguageText": {},
+              "sizeType": "middle"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "string",
+              "columnName": "PRIORITY",
+              "size": 500,
+              "nullable": true
+            },
+            "formatType": {
+              "type": "label",
+              "format": ""
+            },
+            "editType": "textBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "isGeneratedColumn": true,
+            "key": "3"
+          },
+          {
+            "name": "DESCRIPTION",
+            "caption": {
+              "tr-TR": "Açıklama",
+              "en-US": "DESCRIPTION",
+              "ru-RU": "DESCRIPTION"
+            },
+            "width": "40%",
+            "align": "left",
+            "wordWrapEnabled": false,
+            "visible": true,
+            "sorting": {
+              "index": 0,
+              "order": "asc",
+              "enabled": true
+            },
+            "editingEnabled": false,
+            "filtering": {
+              "enabled": false,
+              "operation": "Contains",
+              "value": null
+            },
+            "headerFilterEnabled": false,
+            "summaryTypes": [],
+            "summaryTypePrefixes": [],
+            "editControl": {
+              "name": "DESCRIPTION",
+              "controlId": "DESCRIPTION",
+              "controlType": "TextBox",
+              "visible": true,
+              "clientVisible": true,
+              "enabled": true,
+              "clientEnabled": true,
+              "style": {
+                "backgroundColor": ""
+              },
+              "containerStyle": {},
+              "customClassName": "",
+              "caption": {
+                "ellipsis": true,
+                "font": {
+                  "bold": false,
+                  "color": "#25241f",
+                  "family": "Source Sans Pro, sans-serif",
+                  "italic": false,
+                  "size": "13",
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "position": "left",
+                "text": {},
+                "visible": true,
+                "size": {
+                  "width": 120,
+                  "height": 34
+                },
+                "horizontalAlign": "left",
+                "verticalAlign": "middle",
+                "showColon": false,
+                "markSettings": {
+                  "char": null,
+                  "position": "atFirst",
+                  "style": {}
+                }
+              },
+              "designerProps": {
+                "selected": false,
+                "allowAutoClear": true
+              },
+              "readOnly": false,
+              "ddl": {
+                "name": "DESCRIPTION",
+                "allowNull": true,
+                "size": 500,
+                "type": "String"
+              },
+              "text": "",
+              "maxLength": 500,
+              "enableMultiLanguageText": false,
+              "multiLanguageText": {},
+              "sizeType": "middle"
+            },
+            "defaultValue": null,
+            "isPrimaryKey": false,
+            "autoIncrement": false,
+            "useThousandSeparator": false,
+            "precision": 0,
+            "format": null,
+            "hidingPriority": null,
+            "actionButtonProps": {
+              "name": "",
+              "text": {},
+              "title": {},
+              "icon": "search",
+              "typeName": "CreateFormArgs",
+              "args": {
+                "typeName": "CreateFormArgs",
+                "formName": null,
+                "projectName": null,
+                "size": 1,
+                "showOn": "panel",
+                "closeCurrentPanel": false,
+                "parameters": []
+              },
+              "visible": true
+            },
+            "iconMatchers": [],
+            "allowHiding": true,
+            "allowNull": true,
+            "showEditorAlways": false,
+            "dbType": {
+              "type": "string",
+              "columnName": "DESCRIPTION",
+              "size": 500,
+              "nullable": true
+            },
+            "formatType": {
+              "type": "label",
+              "format": ""
+            },
+            "editType": "textBox",
+            "sourceType": "base64",
+            "enlargeOnClick": false,
+            "imageWidth": 100,
+            "sizeUnit": "pixels",
+            "imageType": "smallImage",
+            "defaultImage": null,
+            "isGeneratedColumn": true,
+            "key": "4"
+          }
+        ]
+      },
+      "id": "Priorities_Grid",
+      "type": "DataGrid"
+    }
+  },
+  "views": {
+    "default": {
+      "entities": {
+        "items": {
+          "Priorities": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Row1"
+            ],
+            "id": "Priorities",
+            "type": "Form"
+          },
+          "Row1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Priorities",
+            "items": [
+              "Column1"
+            ],
+            "id": "Row1",
+            "type": "Section"
+          },
+          "Column1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Row1",
+            "items": [
+              "Priorities_Grid"
+            ],
+            "id": "Column1",
+            "type": "Column"
+          },
+          "Priorities_Grid": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "Priorities_Grid",
+            "type": "DataGrid"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "Priorities"
+      ],
+      "description": null
+    }
+  },
+  "activeView": "default",
+  "version": 10
+}

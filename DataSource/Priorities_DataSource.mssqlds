@@ -1,0 +1,35 @@
+{
+  "name": "Priorities_DataSource",
+  "connectionId": "3ee648e2-6d8b-49ad-babf-a6d85f12bb92",
+  "connectionName": {
+    "tr-TR": "SystemDefultConnection"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT DOCUMENTID,\nCOALESCE(NULLIF(E_ITRM_PriorityEditML_SystemCulture.PRIORITY, ''), NULLIF(E_ITRM_PriorityEditML_UserCulture.PRIORITY, ''), NULLIF(E_ITRM_PriorityEditML_defaultCulture.PRIORITY, '')) AS PRIORITY,\nCOALESCE(NULLIF(E_ITRM_PriorityEditML_SystemCulture.DESCRIPTION, ''), NULLIF(E_ITRM_PriorityEditML_UserCulture.DESCRIPTION, ''), NULLIF(E_ITRM_PriorityEditML_defaultCulture.DESCRIPTION, '')) AS DESCRIPTION\n FROM E_ITRM_PriorityEdit\n\nOUTER APPLY (SELECT PRIORITY,DESCRIPTION FROM E_ITRM_PriorityEditML WHERE E_ITRM_PriorityEdit.ID = E_ITRM_PriorityEditML.PARENTID AND E_ITRM_PriorityEditML.CULTURE = 'system') E_ITRM_PriorityEditML_SystemCulture \nOUTER APPLY (SELECT PRIORITY,DESCRIPTION FROM E_ITRM_PriorityEditML WHERE E_ITRM_PriorityEdit.ID = E_ITRM_PriorityEditML.PARENTID AND E_ITRM_PriorityEditML.CULTURE = {{Culture}}) E_ITRM_PriorityEditML_UserCulture\nOUTER APPLY (SELECT PRIORITY,DESCRIPTION FROM E_ITRM_PriorityEditML WHERE E_ITRM_PriorityEdit.ID = E_ITRM_PriorityEditML.PARENTID AND E_ITRM_PriorityEditML.CULTURE = (SELECT TOP 1 CULTURE from LANGUAGES WHERE ISDEFAULT = 1)) E_ITRM_PriorityEditML_defaultCulture\n\nWHERE\nE_ITRM_PriorityEdit.DELETEDAT IS NULL\nORDER BY DOCUMENTID DESC\n",
+    "parameters": [
+      {
+        "caption": "Culture",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Culture",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "length": 10,
+        "subType": null
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [],
+    "returnType": null
+  }
+}

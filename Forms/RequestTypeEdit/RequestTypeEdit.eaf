@@ -1,0 +1,357 @@
+{
+  "data": {
+    "RequestTypeEdit": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Talep Tipi",
+            "en-US": "RequestTypeEdit"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "toolbarButtons": [
+          {
+            "key": "toolbarSaveButton",
+            "name": "Kaydet",
+            "icon": "save",
+            "enabled": true,
+            "caption": {
+              "tr-TR": "Kaydet",
+              "en-US": "Save"
+            },
+            "validate": true
+          }
+        ],
+        "name": "RequestTypeEdit",
+        "ddl": {
+          "name": "RequestTypeEdit",
+          "prefix": ""
+        },
+        "text": {
+          "tr-TR": "RequestTypeEdit",
+          "en-US": "RequestTypeEdit"
+        },
+        "commitId": 5,
+        "rules": {
+          "FormRequiredFields": {
+            "id": "FormRequiredFields",
+            "name": "FormRequiredFields",
+            "enabled": true,
+            "orderNo": 0,
+            "statements": [
+              {
+                "enabled": true,
+                "collapsed": false,
+                "id": "FormRequiredFields_Statement_default_RequestType",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Talep Tipi girilmesi zorunludur!",
+                      "en-US": "Talep Tipi: Required field",
+                      "ru-RU": "Talep Tipi: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "RequestType"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_RequestType",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Talep Tipi"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_RequestType",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_RequestType_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestType",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_RequestType",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestTypeEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              }
+            ],
+            "actions": [
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Talep Tipi girilmesi zorunludur!",
+                  "en-US": "Talep Tipi: Required field",
+                  "ru-RU": "Talep Tipi: Обязательное поле"
+                },
+                "highlightList": [
+                  "RequestType"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_RequestType",
+                "typeName": "ValidationFailureAction",
+                "name": "Talep Tipi"
+              }
+            ],
+            "triggerEvents": [
+              "RequestTypeEdit.client.OnBeforeSave",
+              "RequestTypeEdit.server.OnBeforeSave",
+              "RequestTypeEdit.client.OnToolbarButtonClicked",
+              "RequestTypeEdit.server.OnToolbarButtonClicked"
+            ]
+          }
+        },
+        "controlType": "Form",
+        "controlId": "f510a135-4d87-4131-aa8f-3acc4f96520c"
+      },
+      "id": "RequestTypeEdit",
+      "type": "Form"
+    },
+    "RequestType": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Talep Tipi"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 100,
+        "name": "RequestType",
+        "ddl": {
+          "name": "REQUESTTYPE",
+          "allowNull": true,
+          "size": 100,
+          "type": "String"
+        },
+        "commitId": 15,
+        "controlId": "c0d80fb1-8486-eeed-5cca-b8310052d5b0",
+        "required": true,
+        "controlType": "TextBox"
+      },
+      "id": "RequestType",
+      "type": "TextBox"
+    },
+    "Description": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Açıklama"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 5000,
+        "name": "Description",
+        "ddl": {
+          "name": "DESCRIPTION",
+          "allowNull": true,
+          "size": 5000,
+          "type": "String"
+        },
+        "commitId": 5,
+        "controlId": "4541c8a4-50cd-6232-cf2f-8fb587df6e30",
+        "controlType": "TextArea",
+        "required": false
+      },
+      "id": "Description",
+      "type": "TextArea"
+    }
+  },
+  "views": {
+    "default": {
+      "entities": {
+        "items": {
+          "RequestTypeEdit": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Section1"
+            ],
+            "id": "RequestTypeEdit",
+            "type": "Form"
+          },
+          "Section1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestTypeEdit",
+            "items": [
+              "Column1"
+            ],
+            "id": "Section1",
+            "type": "Section"
+          },
+          "Column1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section1",
+            "items": [
+              "RequestType",
+              "Description"
+            ],
+            "id": "Column1",
+            "type": "Column"
+          },
+          "RequestType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "RequestType",
+            "type": "TextBox"
+          },
+          "Description": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "Description",
+            "type": "TextArea"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "RequestTypeEdit"
+      ],
+      "description": null
+    }
+  },
+  "activeView": "default",
+  "version": 10
+}

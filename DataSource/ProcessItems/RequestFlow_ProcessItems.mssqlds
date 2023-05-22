@@ -1,0 +1,175 @@
+{
+  "name": "RequestFlow_ProcessItems",
+  "connectionId": "4a85d4a4-77b7-472b-bad8-8963308c2273",
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "commandText": "SELECT MAX(PROCESSES.ID) AS ProcessID,\nMAX(CONCAT(OSUSERS.FIRSTNAME, ' ', OSUSERS.LASTNAME)) AS 'User',\nMAX(PROCESSREQUESTS.REQUESTDATE) AS CreateDate,\nMAX(PROCESSREQUESTS.ID) AS RequestId,\nMAX(PROJECTFLOWSTATUSESML.CAPTION) AS Caption,\nMAX(PROJECTS.MOBILEFORMVIEW) AS MobileFormView,\nMAX(PROJECTCOREPUBLISHMENTS.PACKAGEVERSION) AS PackageVersion,\nMAX(PROCESSES.CREATEDATE) AS ProcessStartDate\n FROM PROCESSREQUESTS\nLEFT  JOIN PROCESSREQUESTDOCUMENTS WITH(NOLOCK) ON PROCESSREQUESTDOCUMENTS.PROCESSREQUESTID = PROCESSREQUESTS.ID\nLEFT  JOIN DOCUMENTS WITH(NOLOCK) ON DOCUMENTS.ID = PROCESSREQUESTDOCUMENTS.DOCUMENTID\nINNER JOIN PROCESSES WITH(NOLOCK) ON PROCESSES.ID = PROCESSREQUESTS.PROCESSID\nINNER JOIN PROJECTS WITH(NOLOCK) ON PROJECTS.ID = PROCESSES.PROJECTID AND PROJECTS.NAME = {{ProjectName}}\nLEFT  JOIN PROJECTFLOWSTATUSES WITH(NOLOCK) ON PROJECTFLOWSTATUSES.ID = PROCESSES.FLOWSTATUSID\nLEFT  JOIN PROJECTFLOWSTATUSESML WITH(NOLOCK) ON PROJECTFLOWSTATUSESML.FLOWSTATUSID = PROJECTFLOWSTATUSES.ID AND PROJECTFLOWSTATUSESML.CULTURE = {{Culture}}\nINNER JOIN OSUSERS WITH(NOLOCK) ON OSUSERS.ID = PROCESSES.USERID\nINNER JOIN PROJECTFLOWS WITH(NOLOCK) ON PROJECTFLOWS.ID = PROCESSES.FLOWID AND PROJECTFLOWS.NAME = {{FlowName}}\nINNER JOIN PROJECTCOREDEPLOYMENTS WITH(NOLOCK) ON PROJECTCOREDEPLOYMENTS.ID = PROCESSES.DEPLOYMENTID\nINNER JOIN PROJECTCOREPUBLISHMENTS WITH(NOLOCK) ON PROJECTCOREPUBLISHMENTS.ID = PROJECTCOREDEPLOYMENTS.PUBLISHMENTID\nWHERE\n(\n({{ProcessType}} = 0 AND ((PROCESSREQUESTS.STATUS=1 AND PROCESSREQUESTS.RESPONSEDATE IS NULL AND ((PROCESSREQUESTS.OWNEDREQUESTID IS NULL) OR (PROCESSREQUESTS.OWNEDREQUESTID=PROCESSREQUESTS.ID))) OR (PROCESSREQUESTS.STATUS = 1 AND (PROCESSREQUESTS.RESPONSEDATE IS NULL))) AND PROCESSES.FINISHDATE IS NULL AND PROCESSES.DELETEDATE IS NULL)\nOR\n({{ProcessType}} = 1 AND (PROCESSREQUESTS.REQUESTTYPE=6 AND PROCESSREQUESTS.DELETEDFROMLIST=0 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}}) AND PROCESSES.DELETEDATE IS NULL)\nOR\n({{ProcessType}} = 2 AND (PROCESSREQUESTS.REQUESTTYPE = 1 AND PROCESSREQUESTS.DELETEDFROMLIST = 0 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}}) AND PROCESSES.DELETEDATE IS NULL)\nOR\n({{ProcessType}} = 3 AND (PROCESSREQUESTS.STATUS=1 AND PROCESSES.FINISHDATE IS NULL AND PROCESSREQUESTS.REQUESTTYPE=3) AND PROCESSES.DELETEDATE IS NULL)\nOR\n({{ProcessType}} = 4 AND (PROCESSREQUESTS.DELETEDFROMLIST=0 AND PROCESSREQUESTS.STATUS=4 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}}))\nOR\n({{ProcessType}} = 5 AND (PROCESSREQUESTS.DELETEDFROMLIST=0 AND PROCESSREQUESTS.STATUS=4 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}} AND PROCESSREQUESTS.REQUESTTYPE IN (2, 3) AND PROCESSREQUESTS.RESPONSEDATE IS NOT NULL) AND PROCESSES.DELETEDATE IS NULL)\nOR\n({{ProcessType}} = 6 AND (PROCESSREQUESTS.DELETEDFROMLIST=0 AND PROCESSREQUESTS.STATUS=4 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}} AND PROCESSREQUESTS.REQUESTTYPE=6 ))\nOR\n({{ProcessType}} = 7 AND(PROCESSREQUESTS.DELETEDFROMLIST=0 AND PROCESSREQUESTS.STATUS=4 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}} AND PROCESSREQUESTS.REQUESTTYPE=1))\nOR\n({{ProcessType}} = 8 AND (PROCESSREQUESTS.DELETEDFROMLIST=0 AND PROCESSREQUESTS.STATUS=4 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}} AND PROCESSREQUESTS.REQUESTTYPE=2 AND PROCESSREQUESTS.RESPONSEDATE IS NOT NULL))\nOR\n({{ProcessType}} = 10 AND (PROCESSREQUESTS.REQUESTTYPE = 1 AND PROCESSREQUESTS.DELETEDFROMLIST = 0 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}}) AND PROCESSES.DELETEDATE IS NULL AND PROCESSES.FINISHDATE IS NULL)\nOR\n({{ProcessType}} = 11 AND (PROCESSREQUESTS.REQUESTTYPE = 1 AND PROCESSREQUESTS.DELETEDFROMLIST = 0 AND PROCESSREQUESTS.REQUESTDATE BETWEEN {{StartDate}} AND {{EndDate}}) AND PROCESSES.DELETEDATE IS NULL AND PROCESSES.FINISHDATE IS NOT NULL)\nOR\n(({{ProcessType}} < 0 OR {{ProcessType}} IS NULL) AND {{RequestId}} > 0)\n)\nAND\nPROCESSREQUESTS.ID = CASE WHEN {{RequestId}} IS NULL OR {{RequestId}} <= 0 THEN PROCESSREQUESTS.ID ELSE {{RequestId}} END AND\nPROJECTS.STATUS = 1 AND\nPROJECTCOREDEPLOYMENTS.DELETEDAT IS NULL AND\n(({{RequestId}} IS NOT NULL AND {{RequestId}} > 0) OR (PROCESSREQUESTS.USERID IN ({{Users}}) OR PROCESSREQUESTS.POSITIONID IN ({{Positions}})))\nGROUP BY PROCESSREQUESTS.ID\nORDER BY PROCESSREQUESTS.ID DESC\nOFFSET {{Skip}} ROWS FETCH NEXT {{Take}} ROWS ONLY\n",
+    "parameters": [
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Users",
+        "value": [
+          0
+        ],
+        "valueType": 10,
+        "length": 10000,
+        "subType": 3
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Positions",
+        "value": [
+          0
+        ],
+        "valueType": 10,
+        "length": 1000,
+        "subType": 3
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Skip",
+        "value": 0,
+        "valueType": 3,
+        "length": 1000
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Take",
+        "value": 0,
+        "valueType": 3,
+        "length": 1000
+      },
+      {
+        "caption": "Culture",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Culture",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "length": 10
+      },
+      {
+        "caption": "ProcessType",
+        "isActive": true,
+        "isRequired": true,
+        "key": "ProcessType",
+        "value": 0,
+        "valueType": 3,
+        "length": 100
+      },
+      {
+        "caption": "EndDate",
+        "isActive": true,
+        "isRequired": true,
+        "key": "EndDate",
+        "value": "2021-09-25T18:48:29+00:00",
+        "valueType": 6,
+        "length": 100
+      },
+      {
+        "caption": "StartDate",
+        "isActive": true,
+        "isRequired": true,
+        "key": "StartDate",
+        "value": "2021-09-25T18:48:29+00:00",
+        "valueType": 6,
+        "length": 100
+      },
+      {
+        "caption": "FlowName",
+        "isActive": true,
+        "isRequired": true,
+        "key": "FlowName",
+        "value": "FlowName",
+        "valueType": 1,
+        "length": 200
+      },
+      {
+        "caption": "ProjectName",
+        "isActive": true,
+        "isRequired": true,
+        "key": "ProjectName",
+        "value": "ProjectName",
+        "valueType": 1,
+        "length": 500
+      },
+      {
+        "caption": "RequestId",
+        "isActive": true,
+        "isRequired": true,
+        "key": "RequestId",
+        "value": 0,
+        "valueType": 3,
+        "length": 1000
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [
+      {
+        "name": "ProcessId",
+        "caption": "ProcessId",
+        "type": 3,
+        "displayFormat": null
+      },
+      {
+        "name": "User",
+        "caption": "User",
+        "type": 1,
+        "displayFormat": null
+      },
+      {
+        "name": "CreatedDate",
+        "caption": "CreatedDate",
+        "type": 6,
+        "displayFormat": null
+      },
+      {
+        "name": "RequestId",
+        "caption": "RequestId",
+        "type": 3,
+        "displayFormat": null
+      },
+      {
+        "name": "Caption",
+        "caption": "Caption",
+        "type": 1,
+        "displayFormat": null
+      },
+      {
+        "name": "MobileFormView",
+        "caption": "MobileFormView",
+        "type": 2,
+        "displayFormat": null
+      },
+      {
+        "name": "PackageVersion",
+        "caption": "PackageVersion",
+        "type": 3,
+        "displayFormat": null
+      },
+      {
+        "name": "ProcessStartDate",
+        "caption": "ProcessStartDate",
+        "type": 12,
+        "displayFormat": null
+      }
+    ],
+    "returnType": null
+  },
+  "connectionName": {
+    "tr-TR": "SystemDefultConnection"
+  }
+}

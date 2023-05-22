@@ -1,0 +1,66 @@
+{
+  "name": "RequestReasons_DataSource",
+  "connectionId": "3ee648e2-6d8b-49ad-babf-a6d85f12bb92",
+  "connectionName": {
+    "tr-TR": "SystemDefultConnection"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT DOCUMENTID,\nCOALESCE(NULLIF(E_ITRM_RequestReasonEditML_SystemCulture.REQUESTREASON, ''), NULLIF(E_ITRM_RequestReasonEditML_UserCulture.REQUESTREASON, ''), NULLIF(E_ITRM_RequestReasonEditML_defaultCulture.REQUESTREASON, '')) AS REQUESTREASON,\nCOALESCE(NULLIF(E_ITRM_RequestReasonEditML_SystemCulture.DESCRIPTION, ''), NULLIF(E_ITRM_RequestReasonEditML_UserCulture.DESCRIPTION, ''), NULLIF(E_ITRM_RequestReasonEditML_defaultCulture.DESCRIPTION, '')) AS DESCRIPTION,\nE_ITRM_RequestReasonEditSL.REQUESTTYPE,\nReasonEditSL.VALUE as REQUESTTYPEID\n FROM E_ITRM_RequestReasonEdit\n\nOUTER APPLY (SELECT REQUESTREASON,DESCRIPTION FROM E_ITRM_RequestReasonEditML WHERE E_ITRM_RequestReasonEdit.ID = E_ITRM_RequestReasonEditML.PARENTID AND E_ITRM_RequestReasonEditML.CULTURE = 'system') E_ITRM_RequestReasonEditML_SystemCulture \nOUTER APPLY (SELECT REQUESTREASON,DESCRIPTION FROM E_ITRM_RequestReasonEditML WHERE E_ITRM_RequestReasonEdit.ID = E_ITRM_RequestReasonEditML.PARENTID AND E_ITRM_RequestReasonEditML.CULTURE = {{Culture}}) E_ITRM_RequestReasonEditML_UserCulture\nOUTER APPLY (SELECT REQUESTREASON,DESCRIPTION FROM E_ITRM_RequestReasonEditML WHERE E_ITRM_RequestReasonEdit.ID = E_ITRM_RequestReasonEditML.PARENTID AND E_ITRM_RequestReasonEditML.CULTURE = (SELECT TOP 1 CULTURE from LANGUAGES WHERE ISDEFAULT = 1)) E_ITRM_RequestReasonEditML_defaultCulture\n\nLEFT JOIN E_ITRM_RequestReasonEditSL ReasonEditSL on ReasonEditSL.PARENTID=E_ITRM_RequestReasonEdit.ID\n LEFT JOIN\n (SELECT * FROM (\n\t\tSELECT formSL.CONTROLID, \n                   (\n                       SELECT \n                         STRING_AGG(formSLMLMultiple.TEXT, ',') AS TEXT                    \n                       FROM E_ITRM_RequestReasonEditSL formSLMultiple\n                           JOIN E_ITRM_RequestReasonEditSLML formSLMLMultiple WITH (NOLOCK)\n                               ON formSLMultiple.ID = formSLMLMultiple.PARENTID\n                       WHERE formSLMultiple.PARENTID = formSL.PARENTID\n                             AND formSLMultiple.CONTROLID = formSL.CONTROLID\n                             AND formSLMLMultiple.CULTURE = CASE WHEN\n                                             EXISTS (SELECT TOP 1 1 FROM E_ITRM_RequestReasonEditSLML checkML WITH (NOLOCK) WHERE\n                                                        formSLML.PARENTID = checkML.PARENTID AND\n                                                        checkML.CULTURE = {{Culture}} AND\n                                                        checkML.TEXT  IS NOT NULL\n                                                    )\n                                             THEN {{Culture}}\n                                             WHEN\n                                             (SELECT COUNT (1) FROM E_ITRM_RequestReasonEditSLML WHERE \n                                                 E_ITRM_RequestReasonEditSLML.PARENTID = formSLMultiple.ID) = 1\n                                             THEN \n                                                 formSLMLMultiple.CULTURE\n                                             ELSE\n                                                 'system'\n                                             END\n                        \n                   ) AS TEXT, \n                formSL.PARENTID\n\t\t\t        FROM E_ITRM_RequestReasonEditSL formSL\n\t\t\t        JOIN E_ITRM_RequestReasonEditSLML formSLML \n\t\t\t        \t WITH (NOLOCK) ON formSL.ID = formSLML.PARENTID\n\t\t        ) as formSLML\t\nPIVOT(MAX(TEXT) FOR CONTROLID IN (REQUESTTYPE)) AS formSelect)  E_ITRM_RequestReasonEditSL\n          ON E_ITRM_RequestReasonEditSL.PARENTID = E_ITRM_RequestReasonEdit.ID\n         \nWHERE\nE_ITRM_RequestReasonEdit.DELETEDAT IS NULL\nORDER BY DOCUMENTID DESC\n",
+    "parameters": [
+      {
+        "caption": "Culture",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Culture",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "length": 10,
+        "subType": null
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [
+      {
+        "name": "DOCUMENTID",
+        "type": 3,
+        "caption": "DOCUMENTID",
+        "columns": []
+      },
+      {
+        "name": "REQUESTREASON",
+        "type": 1,
+        "caption": "REQUESTREASON",
+        "columns": []
+      },
+      {
+        "name": "DESCRIPTION",
+        "type": 1,
+        "caption": "DESCRIPTION",
+        "columns": []
+      },
+      {
+        "name": "REQUESTTYPE",
+        "type": 1,
+        "caption": "REQUESTTYPE",
+        "columns": []
+      },
+      {
+        "name": "REQUESTTYPEID",
+        "type": 9,
+        "caption": "REQUESTTYPEID",
+        "columns": []
+      }
+    ],
+    "returnType": 10
+  }
+}

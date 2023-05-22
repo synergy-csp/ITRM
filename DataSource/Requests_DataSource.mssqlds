@@ -1,0 +1,45 @@
+{
+  "name": "Requests_DataSource",
+  "connectionId": "3ee648e2-6d8b-49ad-babf-a6d85f12bb92",
+  "connectionName": {
+    "tr-TR": "SystemDefultConnection"
+  },
+  "connectionType": 1,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "commandText": "SELECT process.ID AS 'ProcessID',\n(users.FIRSTNAME + ' ' + users.LASTNAME) AS 'RequestingUser',\ndocuments.CREATEDAT AS 'CreatedDate',\nprocessRequest.ID AS RequestId,\nPROJECTFLOWSTATUSESML.CAPTION AS Status,\ndocuments.ID AS DOCUMENTID,\nE_ITRM_RequestEditSL.OPENTYPE,\nE_ITRM_RequestEditSL.REQUESTORDEPARTMENT,\nE_ITRM_RequestEditSL.PRIORITY,\nE_ITRM_RequestEditSL.REQUESTTYPE,\nE_ITRM_RequestEdit.UNIQUEID,\nCASE WHEN E_ITRM_RequestEditSL.REQUESTORLOOK IS NULL THEN E_ITRM_RequestEdit.REQUESTOR ELSE E_ITRM_RequestEditSL.REQUESTORLOOK END REQUESTOR,\nE_ITRM_RequestEditSL.REQUESTREASON,\nCOALESCE(NULLIF(E_ITRM_RequestEditML_SystemCulture.IMAGES, ''), NULLIF(E_ITRM_RequestEditML_UserCulture.IMAGES, ''), NULLIF(E_ITRM_RequestEditML_defaultCulture.IMAGES, '')) AS IMAGES,\nCOALESCE(NULLIF(E_ITRM_RequestEditML_SystemCulture.DESCRIPTION, ''), NULLIF(E_ITRM_RequestEditML_UserCulture.DESCRIPTION, ''), NULLIF(E_ITRM_RequestEditML_defaultCulture.DESCRIPTION, '')) AS DESCRIPTION,\nE_ITRM_RequestEdit.REQUESTDATE,\nCOALESCE(NULLIF(E_ITRM_RequestEditML_SystemCulture.DEVELOPERDESCRIPTION, ''), NULLIF(E_ITRM_RequestEditML_UserCulture.DEVELOPERDESCRIPTION, ''), NULLIF(E_ITRM_RequestEditML_defaultCulture.DEVELOPERDESCRIPTION, '')) AS DEVELOPERDESCRIPTION,\nCOALESCE(NULLIF(E_ITRM_RequestEditML_SystemCulture.REVIEWREASON, ''), NULLIF(E_ITRM_RequestEditML_UserCulture.REVIEWREASON, ''), NULLIF(E_ITRM_RequestEditML_defaultCulture.REVIEWREASON, '')) AS REVIEWREASON\n FROM E_ITRM_RequestEdit\n\nOUTER APPLY (SELECT IMAGES,DESCRIPTION,DEVELOPERDESCRIPTION,REVIEWREASON FROM E_ITRM_RequestEditML WHERE E_ITRM_RequestEdit.ID = E_ITRM_RequestEditML.PARENTID AND E_ITRM_RequestEditML.CULTURE = 'system') E_ITRM_RequestEditML_SystemCulture \nOUTER APPLY (SELECT IMAGES,DESCRIPTION,DEVELOPERDESCRIPTION,REVIEWREASON FROM E_ITRM_RequestEditML WHERE E_ITRM_RequestEdit.ID = E_ITRM_RequestEditML.PARENTID AND E_ITRM_RequestEditML.CULTURE = {{Culture}}) E_ITRM_RequestEditML_UserCulture\nOUTER APPLY (SELECT IMAGES,DESCRIPTION,DEVELOPERDESCRIPTION,REVIEWREASON FROM E_ITRM_RequestEditML WHERE E_ITRM_RequestEdit.ID = E_ITRM_RequestEditML.PARENTID AND E_ITRM_RequestEditML.CULTURE = (SELECT TOP 1 CULTURE from LANGUAGES WHERE ISDEFAULT = 1)) E_ITRM_RequestEditML_defaultCulture\n\n\n LEFT JOIN\n (SELECT * FROM (\n\t\tSELECT formSL.CONTROLID, \n                   (\n                       SELECT \n                         STRING_AGG(formSLMLMultiple.TEXT, ',') AS TEXT                    \n                       FROM E_ITRM_RequestEditSL formSLMultiple\n                           JOIN E_ITRM_RequestEditSLML formSLMLMultiple WITH (NOLOCK)\n                               ON formSLMultiple.ID = formSLMLMultiple.PARENTID\n                       WHERE formSLMultiple.PARENTID = formSL.PARENTID\n                             AND formSLMultiple.CONTROLID = formSL.CONTROLID\n                             AND formSLMLMultiple.CULTURE = CASE WHEN\n                                             EXISTS (SELECT TOP 1 1 FROM E_ITRM_RequestEditSLML checkML WITH (NOLOCK) WHERE\n                                                        formSLML.PARENTID = checkML.PARENTID AND\n                                                        checkML.CULTURE = {{Culture}} AND\n                                                        checkML.TEXT  IS NOT NULL\n                                                    )\n                                             THEN {{Culture}}\n                                             WHEN\n                                             (SELECT COUNT (1) FROM E_ITRM_RequestEditSLML WHERE \n                                                 E_ITRM_RequestEditSLML.PARENTID = formSLMultiple.ID) = 1\n                                             THEN \n                                                 formSLMLMultiple.CULTURE\n                                             ELSE\n                                                 'system'\n                                             END\n                        \n                   ) AS TEXT, \n                formSL.PARENTID\n\t\t\t        FROM E_ITRM_RequestEditSL formSL\n\t\t\t        JOIN E_ITRM_RequestEditSLML formSLML \n\t\t\t        \t WITH (NOLOCK) ON formSL.ID = formSLML.PARENTID\n\t\t        ) as formSLML\t\nPIVOT(MAX(TEXT) FOR CONTROLID IN (OPENTYPE,REQUESTORDEPARTMENT,PRIORITY,REQUESTTYPE,REQUESTORLOOK,REQUESTREASON)) AS formSelect)  E_ITRM_RequestEditSL\n          ON E_ITRM_RequestEditSL.PARENTID = E_ITRM_RequestEdit.ID\n         \nJOIN DOCUMENTS documents WITH (NOLOCK) ON documents.ID = E_ITRM_RequestEdit.DOCUMENTID\nLEFT JOIN PROJECTS projects WITH (NOLOCK) ON projects.NAME = 'ITRM'\nLEFT JOIN PROCESSES process WITH (NOLOCK) ON process.PROJECTID = projects.ID\nJOIN PROCESSREQUESTDOCUMENTS processRD WITH(NOLOCK) ON processRD.DOCUMENTID = documents.ID\nJOIN PROCESSREQUESTS processRequest  ON processRD.PROCESSREQUESTID = processRequest.ID\nLEFT JOIN PROJECTFLOWSTATUSES WITH (NOLOCK) ON PROJECTFLOWSTATUSES.ID = process.FLOWSTATUSID\nLEFT JOIN PROJECTFLOWSTATUSESML WITH (NOLOCK) ON PROJECTFLOWSTATUSESML.FLOWSTATUSID = PROJECTFLOWSTATUSES.ID AND PROJECTFLOWSTATUSESML.CULTURE = {{Culture}}\nINNER JOIN OSUSERS users WITH (NOLOCK) ON users.ID = documents.CREATEDBY\nWHERE\ndocuments.DELETEDAT IS NULL AND documents.CREATEDBY = {{userId}} AND\nprocessRequest.ID = (\n                                            SELECT MAX(PR.ID) REQUESTID\n                                            FROM PROCESSREQUESTS PR WITH (NOLOCK)\n                                            WHERE PR.PROCESSID = processRequest.PROCESSID\n                                                AND PR.PROCESSID = process.ID\n  \t\t                                    \tAND PR.REQUESTTYPE IN (2,3)\n                    )\nORDER BY processRequest.ID DESC\n",
+    "parameters": [
+      {
+        "caption": "Culture",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Culture",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "length": 10,
+        "subType": null
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "userId",
+        "value": "%User.Id%",
+        "valueType": 3,
+        "length": 255,
+        "subType": null
+      }
+    ],
+    "commandType": 1,
+    "executionType": 3
+  },
+  "structure": {
+    "columns": [],
+    "returnType": null
+  }
+}

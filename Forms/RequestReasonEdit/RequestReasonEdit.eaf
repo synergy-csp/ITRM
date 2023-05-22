@@ -1,0 +1,456 @@
+{
+  "data": {
+    "RequestReasonEdit": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Talep Nedeni",
+            "en-US": "RequestReasonEdit"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "toolbarButtons": [
+          {
+            "key": "toolbarSaveButton",
+            "name": "Kaydet",
+            "icon": "save",
+            "enabled": true,
+            "caption": {
+              "tr-TR": "Kaydet",
+              "en-US": "Save"
+            },
+            "validate": true
+          },
+          {
+            "key": "toolbarSaveAsButton",
+            "name": "Farklı Kaydet",
+            "icon": "save-as",
+            "enabled": false,
+            "caption": {
+              "tr-TR": "Farklı Kaydet",
+              "en-US": "Save As"
+            },
+            "validate": false
+          }
+        ],
+        "name": "RequestReasonEdit",
+        "ddl": {
+          "name": "RequestReasonEdit",
+          "prefix": ""
+        },
+        "text": {
+          "tr-TR": "RequestReasonEdit",
+          "en-US": "RequestReasonEdit"
+        },
+        "commitId": 2,
+        "rules": {
+          "FormRequiredFields": {
+            "id": "FormRequiredFields",
+            "name": "FormRequiredFields",
+            "enabled": true,
+            "orderNo": 0,
+            "statements": [
+              {
+                "enabled": true,
+                "collapsed": false,
+                "id": "FormRequiredFields_Statement_default_RequestReason",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Talep Nedeni zorunlu alandır!",
+                      "en-US": "Talep Nedeni: Required field",
+                      "ru-RU": "Talep Nedeni: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "RequestReason"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_RequestReason",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Talep Nedeni"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_RequestReason",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_RequestReason_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestReason",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_RequestReason",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestReasonEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              }
+            ],
+            "actions": [
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Talep Nedeni zorunlu alandır!",
+                  "en-US": "Talep Nedeni: Required field",
+                  "ru-RU": "Talep Nedeni: Обязательное поле"
+                },
+                "highlightList": [
+                  "RequestReason"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_RequestReason",
+                "typeName": "ValidationFailureAction",
+                "name": "Talep Nedeni"
+              }
+            ],
+            "triggerEvents": [
+              "RequestReasonEdit.client.OnBeforeSave",
+              "RequestReasonEdit.server.OnBeforeSave",
+              "RequestReasonEdit.client.OnToolbarButtonClicked",
+              "RequestReasonEdit.server.OnToolbarButtonClicked"
+            ]
+          }
+        },
+        "controlType": "Form",
+        "controlId": "ce8070eb-c42e-457b-a680-92fa151538aa"
+      },
+      "id": "RequestReasonEdit",
+      "type": "Form"
+    },
+    "RequestReason": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Talep Nedeni"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 100,
+        "name": "RequestReason",
+        "ddl": {
+          "name": "REQUESTREASON",
+          "allowNull": true,
+          "size": 100,
+          "type": "String"
+        },
+        "commitId": 10,
+        "controlId": "559b2375-a4e6-6f32-e95b-7430a7ceebd4",
+        "required": true,
+        "controlType": "TextBox"
+      },
+      "id": "RequestReason",
+      "type": "TextBox"
+    },
+    "Description": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Açıklama"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 5000,
+        "name": "Description",
+        "ddl": {
+          "name": "DESCRIPTION",
+          "allowNull": true,
+          "size": 5000,
+          "type": "String"
+        },
+        "commitId": 6,
+        "controlId": "92dbda88-1f89-d7b1-68a8-c1cb9d643fd4",
+        "controlType": "TextArea",
+        "required": false
+      },
+      "id": "Description",
+      "type": "TextArea"
+    },
+    "RequestType": {
+      "properties": {
+        "dataFields": [
+          {
+            "name": "DOCUMENTID",
+            "type": "number"
+          },
+          {
+            "name": "REQUESTTYPE",
+            "type": "string"
+          },
+          {
+            "name": "DESCRIPTION",
+            "type": "string"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource-RequestTypes_DataSource>",
+          "displayExpr": [
+            "REQUESTTYPE"
+          ],
+          "valueExpr": "DOCUMENTID",
+          "name": "RequestTypes_DataSource",
+          "runAtServer": false,
+          "parameters": [],
+          "connectionType": 1,
+          "displayFormat": "{{ REQUESTTYPE }}",
+          "field": null
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Talep Tipi"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "RequestType",
+        "ddl": {
+          "name": "REQUESTTYPE"
+        },
+        "iconExpr": "",
+        "commitId": 13,
+        "controlType": "ComboBox",
+        "controlId": "966c0e78-9d5b-9304-7201-14f2fa7f4e2a",
+        "required": false
+      },
+      "id": "RequestType",
+      "type": "ComboBox"
+    }
+  },
+  "views": {
+    "default": {
+      "entities": {
+        "items": {
+          "RequestReasonEdit": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Section1"
+            ],
+            "id": "RequestReasonEdit",
+            "type": "Form"
+          },
+          "Section1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestReasonEdit",
+            "items": [
+              "Column1"
+            ],
+            "id": "Section1",
+            "type": "Section"
+          },
+          "Column1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section1",
+            "items": [
+              "RequestType",
+              "RequestReason",
+              "Description"
+            ],
+            "id": "Column1",
+            "type": "Column"
+          },
+          "RequestReason": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "RequestReason",
+            "type": "TextBox"
+          },
+          "Description": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "Description",
+            "type": "TextArea"
+          },
+          "RequestType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "RequestType",
+            "type": "ComboBox"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "RequestReasonEdit"
+      ],
+      "description": null
+    }
+  },
+  "activeView": "default",
+  "version": 10
+}

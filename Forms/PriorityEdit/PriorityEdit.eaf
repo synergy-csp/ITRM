@@ -1,0 +1,368 @@
+{
+  "data": {
+    "PriorityEdit": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Öncelik",
+            "en-US": "PriorityEdit"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "toolbarButtons": [
+          {
+            "key": "toolbarSaveButton",
+            "name": "Kaydet",
+            "icon": "save",
+            "enabled": true,
+            "caption": {
+              "tr-TR": "Kaydet",
+              "en-US": "Save"
+            },
+            "validate": true
+          },
+          {
+            "key": "toolbarSaveAsButton",
+            "name": "Farklı Kaydet",
+            "icon": "save-as",
+            "enabled": false,
+            "caption": {
+              "tr-TR": "Farklı Kaydet",
+              "en-US": "Save As"
+            },
+            "validate": false
+          }
+        ],
+        "name": "PriorityEdit",
+        "ddl": {
+          "name": "PriorityEdit",
+          "prefix": ""
+        },
+        "text": {
+          "tr-TR": "PriorityEdit",
+          "en-US": "PriorityEdit"
+        },
+        "commitId": 2,
+        "rules": {
+          "FormRequiredFields": {
+            "id": "FormRequiredFields",
+            "name": "FormRequiredFields",
+            "enabled": true,
+            "orderNo": 0,
+            "statements": [
+              {
+                "enabled": true,
+                "collapsed": false,
+                "id": "FormRequiredFields_Statement_default_Priority",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Öncelik zorunlu alandır!",
+                      "en-US": "Öncelik: Required field",
+                      "ru-RU": "Öncelik: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "Priority"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_Priority",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Öncelik"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_Priority",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_Priority_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "Priority",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_Priority",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "PriorityEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              }
+            ],
+            "actions": [
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Öncelik zorunlu alandır!",
+                  "en-US": "Öncelik: Required field",
+                  "ru-RU": "Öncelik: Обязательное поле"
+                },
+                "highlightList": [
+                  "Priority"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_Priority",
+                "typeName": "ValidationFailureAction",
+                "name": "Öncelik"
+              }
+            ],
+            "triggerEvents": [
+              "PriorityEdit.client.OnBeforeSave",
+              "PriorityEdit.server.OnBeforeSave",
+              "PriorityEdit.client.OnToolbarButtonClicked",
+              "PriorityEdit.server.OnToolbarButtonClicked"
+            ]
+          }
+        },
+        "controlType": "Form",
+        "controlId": "bb5ced1c-0054-4b85-87ce-46070de14acf"
+      },
+      "id": "PriorityEdit",
+      "type": "Form"
+    },
+    "Priority": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Öncelik"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 100,
+        "name": "Priority",
+        "ddl": {
+          "name": "PRIORITY",
+          "allowNull": true,
+          "size": 100,
+          "type": "String"
+        },
+        "commitId": 7,
+        "controlId": "0b5d060a-c1cf-a34b-c8de-0c04417a7890",
+        "required": true,
+        "controlType": "TextBox"
+      },
+      "id": "Priority",
+      "type": "TextBox"
+    },
+    "Description": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Açıklama"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 5000,
+        "name": "Description",
+        "ddl": {
+          "name": "DESCRIPTION",
+          "allowNull": true,
+          "size": 5000,
+          "type": "String"
+        },
+        "commitId": 14,
+        "controlId": "ac0db2a6-0f91-07ca-865c-0a4b8e49660f",
+        "controlType": "TextArea",
+        "required": false
+      },
+      "id": "Description",
+      "type": "TextArea"
+    }
+  },
+  "views": {
+    "default": {
+      "entities": {
+        "items": {
+          "PriorityEdit": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Section1"
+            ],
+            "id": "PriorityEdit",
+            "type": "Form"
+          },
+          "Section1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "PriorityEdit",
+            "items": [
+              "Column1"
+            ],
+            "id": "Section1",
+            "type": "Section"
+          },
+          "Column1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section1",
+            "items": [
+              "Priority",
+              "Description"
+            ],
+            "id": "Column1",
+            "type": "Column"
+          },
+          "Priority": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "Priority",
+            "type": "TextBox"
+          },
+          "Description": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "Description",
+            "type": "TextArea"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "PriorityEdit"
+      ],
+      "description": null
+    }
+  },
+  "activeView": "default",
+  "version": 10
+}

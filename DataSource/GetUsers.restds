@@ -1,0 +1,156 @@
+{
+  "name": "GetUsers",
+  "connectionId": "78100f8c-e4b6-45e9-8597-26808ca11381",
+  "connectionName": {
+    "tr-TR": "REST_HR"
+  },
+  "connectionType": 5,
+  "description": {},
+  "id": null,
+  "properties": {
+    "cacheTTL": 60000,
+    "cacheType": "Memory",
+    "enableCache": true,
+    "timeout": 60,
+    "bodyContent": "{\"loadOptions\":{\"sorts\":[],\"filters\":[{\"Operator\":1,\"Filters\":[{\"Column\":\"department\",\"Not\":false,\"Type\":1,\"Value\":\"@department\",\"ItemType\":4}]}]},\"companyId\":null,\"noneSetCompany\":false}",
+    "contentType": 3,
+    "endpoint": "/Users/GetAllWithLoadOptions",
+    "requestType": 1,
+    "selectedPath": "result.data",
+    "parameters": [
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "department",
+        "value": "1",
+        "valueType": 1,
+        "type": 3
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Authorization",
+        "value": "%User.Token%",
+        "valueType": 1,
+        "type": 1
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Bimser-Encrypted-Data",
+        "value": "%User.EncryptedData%",
+        "valueType": 1,
+        "type": 1
+      },
+      {
+        "caption": "",
+        "isActive": true,
+        "isRequired": true,
+        "key": "Bimser-Language",
+        "value": "%User.Language%",
+        "valueType": 1,
+        "type": 1
+      }
+    ]
+  },
+  "structure": {
+    "metaData": [
+      {
+        "childs": [
+          {
+            "childs": [
+              {
+                "childs": [
+                  {
+                    "childs": [],
+                    "displayName": "id",
+                    "name": "id",
+                    "valueType": 3
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "firstname",
+                    "name": "firstname",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "lastname",
+                    "name": "lastname",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "username",
+                    "name": "username",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "eMail",
+                    "name": "eMail",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "department",
+                    "name": "department",
+                    "valueType": 3
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "departmentName",
+                    "name": "departmentName",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "profession",
+                    "name": "profession",
+                    "valueType": 3
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "professionName",
+                    "name": "professionName",
+                    "valueType": 1
+                  },
+                  {
+                    "childs": [],
+                    "displayName": "status",
+                    "name": "status",
+                    "valueType": 3
+                  }
+                ],
+                "displayName": "data",
+                "name": "data",
+                "valueType": 10
+              },
+              {
+                "childs": [],
+                "displayName": "totalCount",
+                "name": "totalCount",
+                "valueType": 3
+              }
+            ],
+            "displayName": "result",
+            "name": "result",
+            "valueType": 9
+          },
+          {
+            "childs": [],
+            "displayName": "success",
+            "name": "success",
+            "valueType": 2
+          }
+        ],
+        "displayName": "",
+        "name": "",
+        "valueType": 9
+      }
+    ]
+  }
+}

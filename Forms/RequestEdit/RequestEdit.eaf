@@ -1,0 +1,3474 @@
+{
+  "data": {
+    "OpenType": {
+      "properties": {
+        "items": [
+          {
+            "key": "1",
+            "value": "1",
+            "text": {
+              "tr-TR": "Kendi adıma"
+            },
+            "selected": true
+          },
+          {
+            "key": "2",
+            "value": "2",
+            "text": {
+              "tr-TR": "Başkası adına"
+            },
+            "selected": false
+          }
+        ],
+        "clientEvents": [
+          {
+            "name": "OnValueChanged",
+            "methodName": "OpenType_OnValueChanged"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource->",
+          "displayExpr": [],
+          "valueExpr": null,
+          "name": null,
+          "runAtServer": false,
+          "parameters": [],
+          "connectionType": null,
+          "displayFormat": null,
+          "field": null
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Açılış Tipi"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "OpenType",
+        "ddl": {
+          "name": "OPENTYPE"
+        },
+        "commitId": 10,
+        "controlType": "RadioList",
+        "controlId": "4a5e58e4-a52a-a3c4-c250-1a5a75d36c25",
+        "dataSourceType": "static",
+        "direction": "horizontal",
+        "required": false
+      },
+      "id": "OpenType",
+      "type": "RadioList"
+    },
+    "RequestorDepartment": {
+      "properties": {
+        "enabled": false,
+        "clientEvents": [
+          {
+            "name": "OnLoad",
+            "methodName": "RequestorDepartment_OnLoad"
+          }
+        ],
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Departman"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "RequestorDepartment",
+        "ddl": {
+          "name": "REQUESTORDEPARTMENT",
+          "allowNull": true,
+          "type": "String",
+          "size": 50
+        },
+        "commitId": 11,
+        "customClassName": "lookupButton",
+        "controlType": "Lookup",
+        "controlId": "0e8ed5dd-5c40-d9df-273e-eeeb356b6e9c",
+        "required": false
+      },
+      "id": "RequestorDepartment",
+      "type": "Lookup"
+    },
+    "Priority": {
+      "properties": {
+        "dataFields": [
+          {
+            "name": "result",
+            "type": "string"
+          },
+          {
+            "name": "success",
+            "type": "boolean"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource-Priorities>",
+          "displayExpr": [
+            "PRIORITY"
+          ],
+          "valueExpr": "DOCUMENTID",
+          "name": "Priorities",
+          "runAtServer": false,
+          "parameters": [],
+          "displayFormat": "{{ PRIORITY }}",
+          "connectionType": 5
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Öncelik"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "Priority",
+        "ddl": {
+          "name": "PRIORITY"
+        },
+        "iconExpr": "",
+        "commitId": 13,
+        "controlType": "ComboBox",
+        "controlId": "36afba35-de24-add6-e4c3-fc18ffd99d8a",
+        "required": true
+      },
+      "id": "Priority",
+      "type": "ComboBox"
+    },
+    "RequestType": {
+      "properties": {
+        "dataFields": [
+          {
+            "name": "DOCUMENTID",
+            "type": "number"
+          },
+          {
+            "name": "REQUESTTYPE",
+            "type": "string"
+          },
+          {
+            "name": "DESCRIPTION",
+            "type": "string"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource-RequestTypes>",
+          "displayExpr": [
+            "REQUESTTYPE"
+          ],
+          "valueExpr": "DOCUMENTID",
+          "name": "RequestTypes",
+          "runAtServer": false,
+          "parameters": [],
+          "displayFormat": "{{ REQUESTTYPE }}",
+          "connectionType": 5
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Talep Tipi"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "RequestType",
+        "ddl": {
+          "name": "REQUESTTYPE"
+        },
+        "iconExpr": "",
+        "commitId": 12,
+        "controlType": "ComboBox",
+        "controlId": "fe7067ba-1cc7-8c86-7b5d-093384a04dc6",
+        "required": true
+      },
+      "id": "RequestType",
+      "type": "ComboBox"
+    },
+    "RelatedDocuments": {
+      "properties": {
+        "path": "Projeler/ITRM/asset",
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "İlişkili Dokümanlar"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "showCreateDate": true,
+        "name": "RelatedDocuments",
+        "targetId": "197635",
+        "ddl": {
+          "name": "REALATEDDOCUMENTS"
+        },
+        "commitId": 15,
+        "controlType": "RelatedDocuments",
+        "controlId": "857e4cfc-a6a5-dc88-a848-6717b039b57d",
+        "categories": [
+          {
+            "categoryId": "31e31853-daad-72b6-5dce-b56df4e2b8e7",
+            "name": {
+              "tr-TR": "Varsayılan"
+            },
+            "description": {
+              "tr-TR": "Varsayılan"
+            },
+            "minFilesCount": 0,
+            "maxFilesCount": null,
+            "enabled": true,
+            "path": "Projeler/ITRM/asset",
+            "targetId": 197635,
+            "maxFileSize": null,
+            "allowedFileExtensions": []
+          }
+        ]
+      },
+      "id": "RelatedDocuments",
+      "type": "RelatedDocuments"
+    },
+    "RequestNo": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Talep No"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "ddl": {
+          "name": "REQUESTNO",
+          "type": "String",
+          "size": 100,
+          "allowNull": true
+        },
+        "pullNumberOnStart": true,
+        "name": "RequestNo",
+        "controlId": "1379fa9a-9483-1d1e-7279-45eb1d69c9f7",
+        "commitId": 9,
+        "controlType": "DocumentMetadata"
+      },
+      "id": "RequestNo",
+      "type": "DocumentMetadata"
+    },
+    "RequestorLook": {
+      "properties": {
+        "dataFields": [],
+        "dataSource": {
+          "fileId": "<DataSource-GetUsers>",
+          "displayExpr": [
+            "firstname",
+            "lastname"
+          ],
+          "valueExpr": "id",
+          "displayFormat": "{{ firstname }} {{ lastname }}",
+          "name": "GetUsers",
+          "runAtServer": false,
+          "parameters": [
+            {
+              "name": "department",
+              "length": 0,
+              "valueType": "string",
+              "isRequired": true,
+              "valueModifier": "fieldSelection",
+              "value": "1",
+              "field": "RequestEdit.session.User.Department.Id"
+            }
+          ],
+          "connectionType": 5
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Talep Eden"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "clientVisible": false,
+        "name": "RequestorLook",
+        "ddl": {
+          "name": "REQUESTORLOOK",
+          "allowNull": true,
+          "type": "String",
+          "size": 50
+        },
+        "commitId": 15,
+        "controlType": "Lookup",
+        "gridOptions": {
+          "paging": {
+            "enabled": true,
+            "currentPage": 1,
+            "pageSize": 10,
+            "pagingSizes": [
+              10,
+              20,
+              30,
+              40
+            ]
+          },
+          "searching": {
+            "enabled": false
+          },
+          "sorting": {
+            "enabled": false,
+            "allSortingColumns": true,
+            "mode": "none"
+          },
+          "columns": [
+            {
+              "name": "id",
+              "caption": {
+                "tr-TR": "id"
+              },
+              "width": 100,
+              "align": "left",
+              "wordWrapEnabled": false,
+              "visible": false,
+              "sorting": {
+                "index": 0,
+                "order": "asc",
+                "enabled": true
+              },
+              "editingEnabled": true,
+              "filtering": {
+                "enabled": false,
+                "operation": "Contains",
+                "value": null
+              },
+              "headerFilterEnabled": false,
+              "summaryTypes": [],
+              "summaryTypePrefixes": [],
+              "editControl": {
+                "name": "id",
+                "controlId": "id",
+                "controlType": "NumberBox",
+                "visible": true,
+                "clientVisible": true,
+                "enabled": true,
+                "clientEnabled": true,
+                "style": {
+                  "backgroundColor": ""
+                },
+                "containerStyle": {},
+                "customClassName": "",
+                "caption": {
+                  "ellipsis": true,
+                  "font": {
+                    "bold": false,
+                    "color": "#25241f",
+                    "family": "Source Sans Pro, sans-serif",
+                    "italic": false,
+                    "size": "13",
+                    "strikethrough": false,
+                    "underline": false
+                  },
+                  "position": "left",
+                  "text": {},
+                  "visible": true,
+                  "size": {
+                    "width": 120,
+                    "height": 34
+                  },
+                  "horizontalAlign": "left",
+                  "verticalAlign": "middle",
+                  "showColon": false,
+                  "markSettings": {
+                    "char": null,
+                    "position": "atFirst",
+                    "style": {}
+                  }
+                },
+                "designerProps": {
+                  "selected": false,
+                  "allowAutoClear": true
+                },
+                "readOnly": false,
+                "ddl": {
+                  "name": "id_",
+                  "allowNull": true,
+                  "type": "Decimal",
+                  "size": 19,
+                  "precision": 5
+                },
+                "text": "",
+                "placeholder": {},
+                "textAlign": "right",
+                "max": 99999999999999,
+                "step": 1,
+                "precision": 0,
+                "useThousandSeparator": false,
+                "sizeType": "middle",
+                "onlyNumber": false,
+                "maxLength": 19
+              },
+              "defaultValue": null,
+              "isPrimaryKey": true,
+              "autoIncrement": false,
+              "useThousandSeparator": false,
+              "precision": 0,
+              "format": null,
+              "hidingPriority": null,
+              "actionButtonProps": {
+                "name": "",
+                "text": {},
+                "title": {},
+                "icon": "search",
+                "typeName": "CreateFormArgs",
+                "args": {
+                  "typeName": "CreateFormArgs",
+                  "formName": null,
+                  "projectName": null,
+                  "size": 1,
+                  "showOn": "panel",
+                  "closeCurrentPanel": false,
+                  "parameters": []
+                },
+                "visible": true
+              },
+              "iconMatchers": [],
+              "allowHiding": true,
+              "allowNull": true,
+              "showEditorAlways": false,
+              "dbType": {
+                "type": "decimal",
+                "columnName": "id"
+              },
+              "formatType": {
+                "format": "",
+                "type": "label"
+              },
+              "editType": "numberBox",
+              "sourceType": "base64",
+              "enlargeOnClick": false,
+              "imageWidth": 100,
+              "sizeUnit": "pixels",
+              "imageType": "smallImage",
+              "defaultImage": null,
+              "isGeneratedColumn": true,
+              "key": "0"
+            },
+            {
+              "name": "firstname",
+              "caption": {
+                "tr-TR": "Adı"
+              },
+              "width": "50%",
+              "align": "left",
+              "wordWrapEnabled": false,
+              "visible": true,
+              "sorting": {
+                "index": 0,
+                "order": "asc",
+                "enabled": true
+              },
+              "editingEnabled": true,
+              "filtering": {
+                "enabled": false,
+                "operation": "Contains",
+                "value": null
+              },
+              "headerFilterEnabled": false,
+              "summaryTypes": [],
+              "summaryTypePrefixes": [],
+              "editControl": {
+                "name": "firstname",
+                "controlId": "firstname",
+                "controlType": "TextBox",
+                "visible": true,
+                "clientVisible": true,
+                "enabled": true,
+                "clientEnabled": true,
+                "style": {
+                  "backgroundColor": ""
+                },
+                "containerStyle": {},
+                "customClassName": "",
+                "caption": {
+                  "ellipsis": true,
+                  "font": {
+                    "bold": false,
+                    "color": "#25241f",
+                    "family": "Source Sans Pro, sans-serif",
+                    "italic": false,
+                    "size": "13",
+                    "strikethrough": false,
+                    "underline": false
+                  },
+                  "position": "left",
+                  "text": {},
+                  "visible": true,
+                  "size": {
+                    "width": 120,
+                    "height": 34
+                  },
+                  "horizontalAlign": "left",
+                  "verticalAlign": "middle",
+                  "showColon": false,
+                  "markSettings": {
+                    "char": null,
+                    "position": "atFirst",
+                    "style": {}
+                  }
+                },
+                "designerProps": {
+                  "selected": false,
+                  "allowAutoClear": true
+                },
+                "readOnly": false,
+                "ddl": {
+                  "name": "firstname",
+                  "allowNull": true,
+                  "size": 50,
+                  "type": "String"
+                },
+                "text": "",
+                "placeholder": {},
+                "textAlign": "left",
+                "maxLength": 50,
+                "isSecretData": false,
+                "enableMultiLanguageText": false,
+                "multiLanguageText": {},
+                "showCharacterCounter": false,
+                "sizeType": "middle"
+              },
+              "defaultValue": null,
+              "isPrimaryKey": false,
+              "autoIncrement": false,
+              "useThousandSeparator": false,
+              "precision": 0,
+              "format": null,
+              "hidingPriority": null,
+              "actionButtonProps": {
+                "name": "",
+                "text": {},
+                "title": {},
+                "icon": "search",
+                "typeName": "CreateFormArgs",
+                "args": {
+                  "typeName": "CreateFormArgs",
+                  "formName": null,
+                  "projectName": null,
+                  "size": 1,
+                  "showOn": "panel",
+                  "closeCurrentPanel": false,
+                  "parameters": []
+                },
+                "visible": true
+              },
+              "iconMatchers": [],
+              "allowHiding": true,
+              "allowNull": true,
+              "showEditorAlways": false,
+              "dbType": {
+                "type": "string",
+                "columnName": "firstname"
+              },
+              "formatType": {
+                "format": "",
+                "type": "label"
+              },
+              "editType": "textBox",
+              "sourceType": "base64",
+              "enlargeOnClick": false,
+              "imageWidth": 100,
+              "sizeUnit": "pixels",
+              "imageType": "smallImage",
+              "defaultImage": null,
+              "isGeneratedColumn": true,
+              "key": "1"
+            },
+            {
+              "name": "lastname",
+              "caption": {
+                "tr-TR": "Soyadı"
+              },
+              "width": "50%",
+              "align": "left",
+              "wordWrapEnabled": false,
+              "visible": true,
+              "sorting": {
+                "index": 0,
+                "order": "asc",
+                "enabled": true
+              },
+              "editingEnabled": true,
+              "filtering": {
+                "enabled": false,
+                "operation": "Contains",
+                "value": null
+              },
+              "headerFilterEnabled": false,
+              "summaryTypes": [],
+              "summaryTypePrefixes": [],
+              "editControl": {
+                "name": "lastname",
+                "controlId": "lastname",
+                "controlType": "TextBox",
+                "visible": true,
+                "clientVisible": true,
+                "enabled": true,
+                "clientEnabled": true,
+                "style": {
+                  "backgroundColor": ""
+                },
+                "containerStyle": {},
+                "customClassName": "",
+                "caption": {
+                  "ellipsis": true,
+                  "font": {
+                    "bold": false,
+                    "color": "#25241f",
+                    "family": "Source Sans Pro, sans-serif",
+                    "italic": false,
+                    "size": "13",
+                    "strikethrough": false,
+                    "underline": false
+                  },
+                  "position": "left",
+                  "text": {},
+                  "visible": true,
+                  "size": {
+                    "width": 120,
+                    "height": 34
+                  },
+                  "horizontalAlign": "left",
+                  "verticalAlign": "middle",
+                  "showColon": false,
+                  "markSettings": {
+                    "char": null,
+                    "position": "atFirst",
+                    "style": {}
+                  }
+                },
+                "designerProps": {
+                  "selected": false,
+                  "allowAutoClear": true
+                },
+                "readOnly": false,
+                "ddl": {
+                  "name": "lastname",
+                  "allowNull": true,
+                  "size": 50,
+                  "type": "String"
+                },
+                "text": "",
+                "placeholder": {},
+                "textAlign": "left",
+                "maxLength": 50,
+                "isSecretData": false,
+                "enableMultiLanguageText": false,
+                "multiLanguageText": {},
+                "showCharacterCounter": false,
+                "sizeType": "middle"
+              },
+              "defaultValue": null,
+              "isPrimaryKey": false,
+              "autoIncrement": false,
+              "useThousandSeparator": false,
+              "precision": 0,
+              "format": null,
+              "hidingPriority": null,
+              "actionButtonProps": {
+                "name": "",
+                "text": {},
+                "title": {},
+                "icon": "search",
+                "typeName": "CreateFormArgs",
+                "args": {
+                  "typeName": "CreateFormArgs",
+                  "formName": null,
+                  "projectName": null,
+                  "size": 1,
+                  "showOn": "panel",
+                  "closeCurrentPanel": false,
+                  "parameters": []
+                },
+                "visible": true
+              },
+              "iconMatchers": [],
+              "allowHiding": true,
+              "allowNull": true,
+              "showEditorAlways": false,
+              "dbType": {
+                "type": "string",
+                "columnName": "lastname"
+              },
+              "formatType": {
+                "format": "",
+                "type": "label"
+              },
+              "editType": "textBox",
+              "sourceType": "base64",
+              "enlargeOnClick": false,
+              "imageWidth": 100,
+              "sizeUnit": "pixels",
+              "imageType": "smallImage",
+              "defaultImage": null,
+              "isGeneratedColumn": true,
+              "key": "2"
+            }
+          ],
+          "columnSettings": {
+            "orderable": false,
+            "resizeable": false,
+            "showColumnChooser": false
+          },
+          "filtering": {
+            "enabled": false
+          },
+          "selection": {
+            "mode": "single"
+          }
+        },
+        "controlId": "7670220e-5955-72c1-957f-4974f567f872",
+        "required": true
+      },
+      "id": "RequestorLook",
+      "type": "Lookup"
+    },
+    "Requestor": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Talep Eden"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "ddl": {
+          "name": "REQUESTOR",
+          "type": "String",
+          "size": 100,
+          "allowNull": true
+        },
+        "name": "Requestor",
+        "controlId": "27ce93c6-7e1d-dcb6-b192-c3d0ec95b846",
+        "commitId": 9,
+        "controlType": "UserMetadata"
+      },
+      "id": "Requestor",
+      "type": "UserMetadata"
+    },
+    "DeveloperDescription": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "İşi Yapan Kullanıcı Açıklaması"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 5000,
+        "name": "DeveloperDescription",
+        "ddl": {
+          "name": "DEVELOPERDESCRIPTION",
+          "allowNull": true,
+          "size": 5000,
+          "type": "String"
+        },
+        "showCharacterCounter": true,
+        "commitId": 15,
+        "controlType": "TextArea",
+        "controlId": "b36074fe-71cc-eeb1-5c4c-f93d42ca14de",
+        "required": false
+      },
+      "id": "DeveloperDescription",
+      "type": "TextArea"
+    },
+    "RequestReason": {
+      "properties": {
+        "dataFields": [
+          {
+            "name": "DOCUMENTID",
+            "type": "number"
+          },
+          {
+            "name": "REQUESTREASON",
+            "type": "string"
+          },
+          {
+            "name": "DESCRIPTION",
+            "type": "string"
+          },
+          {
+            "name": "REQUESTTYPE",
+            "type": "string"
+          },
+          {
+            "name": "REQUESTTYPEID",
+            "type": "number"
+          }
+        ],
+        "dataSource": {
+          "fileId": "<DataSource-RequestReason>",
+          "displayExpr": [
+            "REQUESTREASON"
+          ],
+          "valueExpr": "DOCUMENTID",
+          "name": "RequestReason",
+          "runAtServer": false,
+          "parameters": [
+            {
+              "name": "requestTypeId",
+              "length": 0,
+              "valueType": "string",
+              "isRequired": true,
+              "valueModifier": "fieldSelection",
+              "value": "196850",
+              "field": "RequestType.value"
+            }
+          ],
+          "displayFormat": "{{ REQUESTREASON }}",
+          "connectionType": 5
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Talep Nedeni"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "RequestReason",
+        "ddl": {
+          "name": "REQUESTREASON"
+        },
+        "iconExpr": "",
+        "commitId": 16,
+        "controlType": "ComboBox",
+        "controlId": "5d5e88f2-87f8-dc4e-48eb-09241b6df3a8",
+        "required": true
+      },
+      "id": "RequestReason",
+      "type": "ComboBox"
+    },
+    "Divider1": {
+      "properties": {
+        "style": {
+          "backgroundColor": "rgb(0, 0, 0)"
+        },
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Divider1"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "name": "Divider1",
+        "controlId": "ebc3a0d1-5e59-d3c3-3f96-9914f9ed6d30",
+        "ddl": {
+          "name": "Divider1"
+        },
+        "commitId": 4,
+        "controlType": "Divider"
+      },
+      "id": "Divider1",
+      "type": "Divider"
+    },
+    "Images": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Görseller"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "ddl": {
+          "name": "IMAGES",
+          "allowNull": true,
+          "size": 50,
+          "type": "String"
+        },
+        "toolbarType": "rich",
+        "name": "Images",
+        "controlId": "c3520289-14d9-7136-8929-d6bd8cbc1222",
+        "commitId": 8,
+        "controlType": "HTMLTextBox"
+      },
+      "id": "Images",
+      "type": "HTMLTextBox"
+    },
+    "RequestEdit": {
+      "properties": {
+        "clientEvents": [
+          {
+            "name": "OnLoad",
+            "methodName": "RequestEdit_OnLoad"
+          }
+        ],
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Yeni Talep",
+            "en-US": "RequestEdit"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "toolbarButtons": [
+          {
+            "key": "toolbarSaveButton",
+            "name": "Kaydet",
+            "icon": "save",
+            "enabled": true,
+            "caption": {
+              "tr-TR": "Kaydet",
+              "en-US": "Save"
+            },
+            "validate": false
+          },
+          {
+            "key": "toolbarSaveAsButton",
+            "name": "Farklı Kaydet",
+            "icon": "save-as",
+            "enabled": false,
+            "caption": {
+              "tr-TR": "Farklı Kaydet",
+              "en-US": "Save As"
+            },
+            "validate": false
+          }
+        ],
+        "name": "RequestEdit",
+        "activeView": "default",
+        "ddl": {
+          "name": "RequestEdit",
+          "prefix": ""
+        },
+        "text": {
+          "tr-TR": "RequestEdit",
+          "en-US": "RequestEdit"
+        },
+        "identityFormatId": 214,
+        "commitId": 7,
+        "identityFormat": "ITRM",
+        "rules": {
+          "FormRequiredFields": {
+            "id": "FormRequiredFields",
+            "name": "FormRequiredFields",
+            "enabled": true,
+            "orderNo": 0,
+            "statements": [
+              {
+                "enabled": true,
+                "collapsed": true,
+                "id": "FormRequiredFields_Statement_default_RequestType",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Talep Tipi: Gerekli alan",
+                      "en-US": "Talep Tipi: Required field",
+                      "ru-RU": "Talep Tipi: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "RequestType"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_RequestType",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Talep Tipi"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_RequestType",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_RequestType_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestType",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_RequestType",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              },
+              {
+                "enabled": true,
+                "collapsed": true,
+                "id": "FormRequiredFields_Statement_default_RequestReason",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Talep Nedeni: Gerekli alan",
+                      "en-US": "Talep Nedeni: Required field",
+                      "ru-RU": "Talep Nedeni: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "RequestReason"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_RequestReason",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Talep Nedeni"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_RequestReason",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_RequestReason_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestReason",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_RequestReason",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              },
+              {
+                "enabled": true,
+                "collapsed": true,
+                "id": "FormRequiredFields_Statement_default_Priority",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Öncelik: Gerekli alan",
+                      "en-US": "Öncelik: Required field",
+                      "ru-RU": "Öncelik: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "Priority"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_Priority",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Öncelik"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_Priority",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_Priority_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "Priority",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_Priority",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              },
+              {
+                "enabled": true,
+                "collapsed": true,
+                "id": "FormRequiredFields_Statement_default_Description",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Açıklama: Gerekli alan",
+                      "en-US": "Açıklama: Required field",
+                      "ru-RU": "Açıklama: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "Description"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_Description",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Açıklama"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_Description",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_Description_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "Description",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_Description",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              },
+              {
+                "enabled": true,
+                "collapsed": true,
+                "id": "FormRequiredFields_Statement_default_RequestorLook",
+                "typeName": "IfStatement",
+                "actions": [
+                  {
+                    "alertType": "Warning",
+                    "dialogType": "Toaster",
+                    "messages": {
+                      "tr-TR": "Talep Eden: Gerekli alan",
+                      "en-US": "Talep Eden: Required field",
+                      "ru-RU": "Talep Eden: Обязательное поле"
+                    },
+                    "highlightList": [
+                      "RequestorLook"
+                    ],
+                    "approvalActions": [],
+                    "rejectionActions": [],
+                    "enabled": true,
+                    "id": "FormRequiredToasterMessage_default_RequestorLook",
+                    "typeName": "ValidationFailureAction",
+                    "name": "Talep Eden"
+                  }
+                ],
+                "conditionGroup": {
+                  "id": "FormRequiredFields_ConditionGroup_default_RequestorLook",
+                  "typeName": "AndConditionGroup",
+                  "children": [],
+                  "conditions": [
+                    {
+                      "id": "FormRequiredFields_Condition_default_RequestorLook_value",
+                      "operation": "Null",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestorLook",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": null
+                    },
+                    {
+                      "id": "FormRequiredFields_View_Condition_default_RequestorLook",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "RequestEdit",
+                        "propertyName": "activeView",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "default"
+                    },
+                    {
+                      "id": "749e4052-9d57-e3ff-d7cc-007c0e829e88",
+                      "operation": "Equals",
+                      "typeName": "ValueEntryCondition",
+                      "field": {
+                        "name": "OpenType",
+                        "propertyName": "value",
+                        "type": "string",
+                        "enumMembers": []
+                      },
+                      "selectedField": null,
+                      "value": "2"
+                    }
+                  ],
+                  "collapsed": false
+                }
+              }
+            ],
+            "actions": [
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Talep Tipi: Gerekli alan",
+                  "en-US": "Talep Tipi: Required field",
+                  "ru-RU": "Talep Tipi: Обязательное поле"
+                },
+                "highlightList": [
+                  "RequestType"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_RequestType",
+                "typeName": "ValidationFailureAction",
+                "name": "Talep Tipi"
+              },
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Talep Nedeni: Gerekli alan",
+                  "en-US": "Talep Nedeni: Required field",
+                  "ru-RU": "Talep Nedeni: Обязательное поле"
+                },
+                "highlightList": [
+                  "RequestReason"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_RequestReason",
+                "typeName": "ValidationFailureAction",
+                "name": "Talep Nedeni"
+              },
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Öncelik: Gerekli alan",
+                  "en-US": "Öncelik: Required field",
+                  "ru-RU": "Öncelik: Обязательное поле"
+                },
+                "highlightList": [
+                  "Priority"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_Priority",
+                "typeName": "ValidationFailureAction",
+                "name": "Öncelik"
+              },
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Açıklama: Gerekli alan",
+                  "en-US": "Açıklama: Required field",
+                  "ru-RU": "Açıklama: Обязательное поле"
+                },
+                "highlightList": [
+                  "Description"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_Description",
+                "typeName": "ValidationFailureAction",
+                "name": "Açıklama"
+              },
+              {
+                "alertType": "Warning",
+                "dialogType": "Toaster",
+                "messages": {
+                  "tr-TR": "Talep Eden: Gerekli alan",
+                  "en-US": "Talep Eden: Required field",
+                  "ru-RU": "Talep Eden: Обязательное поле"
+                },
+                "highlightList": [
+                  "RequestorLook"
+                ],
+                "approvalActions": [],
+                "rejectionActions": [],
+                "enabled": true,
+                "id": "FormRequiredToasterMessage_default_RequestorLook",
+                "typeName": "ValidationFailureAction",
+                "name": "Talep Eden"
+              }
+            ],
+            "triggerEvents": [
+              "RequestEdit.client.OnBeforeSave",
+              "RequestEdit.server.OnBeforeSave",
+              "RequestEdit.client.OnToolbarButtonClicked",
+              "RequestEdit.server.OnToolbarButtonClicked"
+            ]
+          }
+        },
+        "controlType": "Form",
+        "controlId": "94706cee-a075-4ffe-9d7e-370827748b81",
+        "serverEvents": [
+          {
+            "name": "OnLoad",
+            "methodName": "RequestEdit_OnLoad"
+          }
+        ]
+      },
+      "id": "RequestEdit",
+      "type": "Form"
+    },
+    "Description": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Açıklama"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 5000,
+        "name": "Description",
+        "ddl": {
+          "name": "DESCRIPTION",
+          "allowNull": true,
+          "size": 5000,
+          "type": "String"
+        },
+        "showCharacterCounter": true,
+        "commitId": 8,
+        "controlType": "TextArea",
+        "controlId": "375c29e0-2080-0768-d650-2b8310bd0fcc",
+        "required": true
+      },
+      "id": "Description",
+      "type": "TextArea"
+    },
+    "ReviewReason": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Görüş Nedeni"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "maxLength": 5000,
+        "name": "ReviewReason",
+        "ddl": {
+          "name": "REVIEWREASON",
+          "allowNull": true,
+          "size": 5000,
+          "type": "String"
+        },
+        "showCharacterCounter": true,
+        "commitId": 10,
+        "controlType": "TextArea",
+        "controlId": "d69932bf-517d-4369-cebc-7692a9b6a26c",
+        "required": false
+      },
+      "id": "ReviewReason",
+      "type": "TextArea"
+    },
+    "RequestDate": {
+      "properties": {
+        "allowClear": false,
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": true,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "top",
+          "text": {
+            "tr-TR": "Talep Tarihi/Saat"
+          },
+          "visible": true,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "showTime": true,
+        "name": "RequestDate",
+        "ddl": {
+          "name": "REQUESTDATE",
+          "allowNull": true,
+          "type": "DateTimeOffset"
+        },
+        "setTodayAsDefault": true,
+        "commitId": 13,
+        "controlType": "DateTimePicker",
+        "format": "YYYY-MM-DD HH:mm",
+        "controlId": "fbc47f60-de5b-8648-11f4-5268db26c829",
+        "required": false
+      },
+      "id": "RequestDate",
+      "type": "DateTimePicker"
+    },
+    "Label1": {
+      "properties": {
+        "caption": {
+          "ellipsis": true,
+          "font": {
+            "bold": false,
+            "color": "#25241f",
+            "family": "Source Sans Pro, sans-serif",
+            "italic": false,
+            "size": "13",
+            "strikethrough": false,
+            "underline": false
+          },
+          "position": "left",
+          "text": {
+            "tr-TR": "Label1"
+          },
+          "visible": false,
+          "size": {
+            "width": 120,
+            "height": 34
+          },
+          "horizontalAlign": "left",
+          "verticalAlign": "middle",
+          "showColon": false,
+          "markSettings": {
+            "char": null,
+            "position": "atFirst",
+            "style": {}
+          }
+        },
+        "font": {
+          "bold": true,
+          "color": "rgb(0, 0, 0)",
+          "family": "Source Sans Pro, sans-serif",
+          "italic": false,
+          "size": 13,
+          "strikethrough": false,
+          "underline": false
+        },
+        "name": "Label1",
+        "controlId": "520350cc-1be6-c570-c906-0901ac3fdafd",
+        "ddl": {
+          "name": "Label1"
+        },
+        "text": {
+          "tr-TR": "Ekler",
+          "en-US": "Label1",
+          "ru-RU": "Label1"
+        },
+        "commitId": 4,
+        "controlType": "Label"
+      },
+      "id": "Label1",
+      "type": "Label"
+    }
+  },
+  "views": {
+    "default": {
+      "entities": {
+        "items": {
+          "Column6": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section3",
+            "items": [
+              "Description"
+            ],
+            "id": "Column6",
+            "type": "Column"
+          },
+          "Column7": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section4",
+            "items": [
+              "Divider1",
+              "Label1"
+            ],
+            "id": "Column7",
+            "type": "Column"
+          },
+          "Column8": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section5",
+            "items": [
+              "RelatedDocuments"
+            ],
+            "id": "Column8",
+            "type": "Column"
+          },
+          "Column9": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section5",
+            "items": [
+              "Images"
+            ],
+            "id": "Column9",
+            "type": "Column"
+          },
+          "OpenType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "OpenType",
+            "type": "RadioList"
+          },
+          "RequestorDepartment": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column2",
+            "items": [],
+            "id": "RequestorDepartment",
+            "type": "Lookup"
+          },
+          "Priority": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column5",
+            "items": [],
+            "id": "Priority",
+            "type": "ComboBox"
+          },
+          "RequestType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column3",
+            "items": [],
+            "id": "RequestType",
+            "type": "ComboBox"
+          },
+          "Section1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column1",
+              "Column2"
+            ],
+            "id": "Section1",
+            "type": "Section"
+          },
+          "Section2": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column3",
+              "Column4",
+              "Column5"
+            ],
+            "id": "Section2",
+            "type": "Section"
+          },
+          "RelatedDocuments": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column8",
+            "items": [],
+            "id": "RelatedDocuments",
+            "type": "RelatedDocuments"
+          },
+          "Section3": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column6"
+            ],
+            "id": "Section3",
+            "type": "Section"
+          },
+          "Section4": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column7"
+            ],
+            "id": "Section4",
+            "type": "Section"
+          },
+          "RequestNo": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "RequestNo",
+            "type": "DocumentMetadata"
+          },
+          "Section5": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column8",
+              "Column9"
+            ],
+            "id": "Section5",
+            "type": "Section"
+          },
+          "RequestorLook": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column2",
+            "items": [],
+            "id": "RequestorLook",
+            "type": "Lookup"
+          },
+          "Requestor": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column2",
+            "items": [],
+            "id": "Requestor",
+            "type": "UserMetadata"
+          },
+          "RequestReason": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column4",
+            "items": [],
+            "id": "RequestReason",
+            "type": "ComboBox"
+          },
+          "Divider1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column7",
+            "items": [],
+            "id": "Divider1",
+            "type": "Divider"
+          },
+          "Images": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column9",
+            "items": [],
+            "id": "Images",
+            "type": "HTMLTextBox"
+          },
+          "RequestEdit": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Section1",
+              "Section2",
+              "Section3",
+              "Section4",
+              "Section5"
+            ],
+            "id": "RequestEdit",
+            "type": "Form"
+          },
+          "Column1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section1",
+            "items": [
+              "OpenType",
+              "RequestNo",
+              "RequestDate"
+            ],
+            "id": "Column1",
+            "type": "Column"
+          },
+          "Column2": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section1",
+            "items": [
+              "Requestor",
+              "RequestorLook",
+              "RequestorDepartment"
+            ],
+            "id": "Column2",
+            "type": "Column"
+          },
+          "Description": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column6",
+            "items": [],
+            "id": "Description",
+            "type": "TextArea"
+          },
+          "RequestDate": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column1",
+            "items": [],
+            "id": "RequestDate",
+            "type": "DateTimePicker"
+          },
+          "Column3": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section2",
+            "items": [
+              "RequestType"
+            ],
+            "id": "Column3",
+            "type": "Column"
+          },
+          "Label1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column7",
+            "items": [],
+            "id": "Label1",
+            "type": "Label"
+          },
+          "Column4": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section2",
+            "items": [
+              "RequestReason"
+            ],
+            "id": "Column4",
+            "type": "Column"
+          },
+          "Column5": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Section2",
+            "items": [
+              "Priority"
+            ],
+            "id": "Column5",
+            "type": "Column"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "RequestEdit"
+      ],
+      "description": null
+    },
+    "developerUser": {
+      "entities": {
+        "items": {
+          "OpenType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column19",
+            "items": [],
+            "id": "OpenType",
+            "type": "RadioList"
+          },
+          "RequestorDepartment": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column20",
+            "items": [],
+            "id": "RequestorDepartment",
+            "type": "Lookup"
+          },
+          "Priority": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column23",
+            "items": [],
+            "id": "Priority",
+            "type": "ComboBox"
+          },
+          "RequestType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column21",
+            "items": [],
+            "id": "RequestType",
+            "type": "ComboBox"
+          },
+          "RelatedDocuments": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column12",
+            "items": [],
+            "id": "RelatedDocuments",
+            "type": "RelatedDocuments"
+          },
+          "RequestNo": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column19",
+            "items": [],
+            "id": "RequestNo",
+            "type": "DocumentMetadata"
+          },
+          "RequestorLook": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column20",
+            "items": [],
+            "id": "RequestorLook",
+            "type": "Lookup"
+          },
+          "Requestor": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column20",
+            "items": [],
+            "id": "Requestor",
+            "type": "UserMetadata"
+          },
+          "DeveloperDescription": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column10",
+            "items": [],
+            "id": "DeveloperDescription",
+            "type": "TextArea"
+          },
+          "RequestReason": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column22",
+            "items": [],
+            "id": "RequestReason",
+            "type": "ComboBox"
+          },
+          "Column20": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column14",
+            "items": [
+              "Requestor",
+              "RequestorLook",
+              "RequestorDepartment"
+            ],
+            "id": "Column20",
+            "type": "Column"
+          },
+          "Column10": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column16",
+            "items": [
+              "Description",
+              "DeveloperDescription"
+            ],
+            "id": "Column10",
+            "type": "Column"
+          },
+          "Column21": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column15",
+            "items": [
+              "RequestType"
+            ],
+            "id": "Column21",
+            "type": "Column"
+          },
+          "Column11": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column17",
+            "items": [
+              "Divider1",
+              "Label1"
+            ],
+            "id": "Column11",
+            "type": "Column"
+          },
+          "Column22": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column15",
+            "items": [
+              "RequestReason"
+            ],
+            "id": "Column22",
+            "type": "Column"
+          },
+          "Column12": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column18",
+            "items": [
+              "RelatedDocuments"
+            ],
+            "id": "Column12",
+            "type": "Column"
+          },
+          "Column23": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column15",
+            "items": [
+              "Priority"
+            ],
+            "id": "Column23",
+            "type": "Column"
+          },
+          "Column13": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column18",
+            "items": [
+              "Images"
+            ],
+            "id": "Column13",
+            "type": "Column"
+          },
+          "Divider1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column11",
+            "items": [],
+            "id": "Divider1",
+            "type": "Divider"
+          },
+          "Images": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column13",
+            "items": [],
+            "id": "Images",
+            "type": "HTMLTextBox"
+          },
+          "Column14": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column19",
+              "Column20"
+            ],
+            "id": "Column14",
+            "type": "Section"
+          },
+          "RequestEdit": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Column14",
+              "Column15",
+              "Column16",
+              "Column17",
+              "Column18"
+            ],
+            "id": "RequestEdit",
+            "type": "Form"
+          },
+          "Column15": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column21",
+              "Column22",
+              "Column23"
+            ],
+            "id": "Column15",
+            "type": "Section"
+          },
+          "Column16": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column10"
+            ],
+            "id": "Column16",
+            "type": "Section"
+          },
+          "Column17": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column11"
+            ],
+            "id": "Column17",
+            "type": "Section"
+          },
+          "Description": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column10",
+            "items": [],
+            "id": "Description",
+            "type": "TextArea"
+          },
+          "Column18": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column12",
+              "Column13"
+            ],
+            "id": "Column18",
+            "type": "Section"
+          },
+          "RequestDate": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column19",
+            "items": [],
+            "id": "RequestDate",
+            "type": "DateTimePicker"
+          },
+          "Label1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column11",
+            "items": [],
+            "id": "Label1",
+            "type": "Label"
+          },
+          "Column19": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column14",
+            "items": [
+              "OpenType",
+              "RequestNo",
+              "RequestDate"
+            ],
+            "id": "Column19",
+            "type": "Column"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "RequestEdit"
+      ],
+      "description": null
+    },
+    "reviewerUser": {
+      "entities": {
+        "items": {
+          "OpenType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column37",
+            "items": [],
+            "id": "OpenType",
+            "type": "RadioList"
+          },
+          "RequestorDepartment": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column24",
+            "items": [],
+            "id": "RequestorDepartment",
+            "type": "Lookup"
+          },
+          "Priority": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column30",
+            "items": [],
+            "id": "Priority",
+            "type": "ComboBox"
+          },
+          "RequestType": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column26",
+            "items": [],
+            "id": "RequestType",
+            "type": "ComboBox"
+          },
+          "RelatedDocuments": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column29",
+            "items": [],
+            "id": "RelatedDocuments",
+            "type": "RelatedDocuments"
+          },
+          "RequestNo": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column37",
+            "items": [],
+            "id": "RequestNo",
+            "type": "DocumentMetadata"
+          },
+          "RequestorLook": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column24",
+            "items": [],
+            "id": "RequestorLook",
+            "type": "Lookup"
+          },
+          "Requestor": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column24",
+            "items": [],
+            "id": "Requestor",
+            "type": "UserMetadata"
+          },
+          "DeveloperDescription": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column25",
+            "items": [],
+            "id": "DeveloperDescription",
+            "type": "TextArea"
+          },
+          "Column30": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column33",
+            "items": [
+              "Priority"
+            ],
+            "id": "Column30",
+            "type": "Column"
+          },
+          "RequestReason": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column28",
+            "items": [],
+            "id": "RequestReason",
+            "type": "ComboBox"
+          },
+          "Column31": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column36",
+            "items": [
+              "Images"
+            ],
+            "id": "Column31",
+            "type": "Column"
+          },
+          "Column32": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column37",
+              "Column24"
+            ],
+            "id": "Column32",
+            "type": "Section"
+          },
+          "Column33": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column26",
+              "Column28",
+              "Column30"
+            ],
+            "id": "Column33",
+            "type": "Section"
+          },
+          "Column34": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column25"
+            ],
+            "id": "Column34",
+            "type": "Section"
+          },
+          "Column24": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column32",
+            "items": [
+              "Requestor",
+              "RequestorLook",
+              "RequestorDepartment"
+            ],
+            "id": "Column24",
+            "type": "Column"
+          },
+          "Divider1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column27",
+            "items": [],
+            "id": "Divider1",
+            "type": "Divider"
+          },
+          "Column35": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column27"
+            ],
+            "id": "Column35",
+            "type": "Section"
+          },
+          "Images": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column31",
+            "items": [],
+            "id": "Images",
+            "type": "HTMLTextBox"
+          },
+          "Column25": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column34",
+            "items": [
+              "Description",
+              "DeveloperDescription",
+              "ReviewReason"
+            ],
+            "id": "Column25",
+            "type": "Column"
+          },
+          "Column36": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "RequestEdit",
+            "items": [
+              "Column29",
+              "Column31"
+            ],
+            "id": "Column36",
+            "type": "Section"
+          },
+          "RequestEdit": {
+            "designerProps": {
+              "selected": true,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": null,
+            "items": [
+              "Column32",
+              "Column33",
+              "Column34",
+              "Column35",
+              "Column36"
+            ],
+            "id": "RequestEdit",
+            "type": "Form"
+          },
+          "Column26": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column33",
+            "items": [
+              "RequestType"
+            ],
+            "id": "Column26",
+            "type": "Column"
+          },
+          "Column37": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column32",
+            "items": [
+              "OpenType",
+              "RequestNo",
+              "RequestDate"
+            ],
+            "id": "Column37",
+            "type": "Column"
+          },
+          "Column27": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column35",
+            "items": [
+              "Divider1",
+              "Label1"
+            ],
+            "id": "Column27",
+            "type": "Column"
+          },
+          "Column28": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column33",
+            "items": [
+              "RequestReason"
+            ],
+            "id": "Column28",
+            "type": "Column"
+          },
+          "Description": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column25",
+            "items": [],
+            "id": "Description",
+            "type": "TextArea"
+          },
+          "ReviewReason": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column25",
+            "items": [],
+            "id": "ReviewReason",
+            "type": "TextArea"
+          },
+          "Column29": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column36",
+            "items": [
+              "RelatedDocuments"
+            ],
+            "id": "Column29",
+            "type": "Column"
+          },
+          "RequestDate": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column37",
+            "items": [],
+            "id": "RequestDate",
+            "type": "DateTimePicker"
+          },
+          "Label1": {
+            "designerProps": {
+              "selected": false,
+              "locked": false,
+              "layout": {
+                "width": null,
+                "visible": true,
+                "clientVisible": true,
+                "padding": null
+              }
+            },
+            "parentId": "Column27",
+            "items": [],
+            "id": "Label1",
+            "type": "Label"
+          }
+        },
+        "ghostItems": {}
+      },
+      "result": [
+        "RequestEdit"
+      ],
+      "description": null
+    }
+  },
+  "activeView": "default",
+  "version": 10
+}

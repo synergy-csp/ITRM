@@ -1,0 +1,7 @@
+.lookupButton button{
+    visibility: hidden;
+}
+
+.lookupButton input{
+    width: 100% !important;
+}
